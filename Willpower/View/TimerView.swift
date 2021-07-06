@@ -1,0 +1,51 @@
+//
+//  TimerView.swift
+//  Willpower
+//
+//  Created by Ruslan Gallyamov on 03.06.2021.
+//
+
+import SwiftUI
+import Combine
+import CoreData
+
+struct TimerView: View {
+    @State private var timeValue = "0"
+    @State private var timeType = "Seconds"
+    @State var timerEvent = Timer.publish(every: 1.0, tolerance: 0.1, on: .main, in: .common).autoconnect()
+    
+    let timer: WPTimer
+    
+    var body: some View {
+        HStack {
+            Text(timer.wrappedName)
+            Spacer()
+            if timer.isActive {
+                Text(timeValue)
+                    .font(.largeTitle)
+                Text(timeType)
+                    .font(.headline)
+            }
+        }
+        .padding(.horizontal)
+        .frame(height: 64, alignment: .center)
+        .background(timer.isActive ? Color.green : Color.gray)
+        .onReceive(timerEvent) { _ in updateTimerValue() }
+        .onAppear(perform: updateTimerValue)
+    }
+    
+    private func updateTimerValue() {
+        if timer.isActive {
+            timeValue = String(timer.timeValue)
+            timeType = timer.timeType
+        }
+    }
+}
+
+struct TimerView_Previews: PreviewProvider {
+    static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    
+    static var previews: some View {
+        TimerView(timer: WPTimer.example(context: contextView))
+    }
+}

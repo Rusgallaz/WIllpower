@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787A2668240600A421AE /* WillpowerApp.swift */; };
+		C13D787D2668240600A421AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787C2668240600A421AE /* ContentView.swift */; };
+		C13D787F2668240E00A421AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13D787E2668240E00A421AE /* Assets.xcassets */; };
+		C13D78822668240E00A421AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13D78812668240E00A421AE /* Preview Assets.xcassets */; };
+		C13D78842668240E00A421AE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78832668240E00A421AE /* Persistence.swift */; };
+		C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C13D78852668240E00A421AE /* Willpower.xcdatamodeld */; };
+		C13D78922668240F00A421AE /* WillpowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78912668240F00A421AE /* WillpowerTests.swift */; };
+		C13D789D2668240F00A421AE /* WillpowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D789C2668240F00A421AE /* WillpowerUITests.swift */; };
+		C13D78AE2669693000A421AE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78AD2669692F00A421AE /* TimerView.swift */; };
+		C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78C2266A92BA00A421AE /* WPTimer.swift */; };
+		C13D78C8266D7E2000A421AE /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78C7266D7E1F00A421AE /* AddTimerView.swift */; };
+		C13D78CD2671510500A421AE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78CC2671510500A421AE /* DetailView.swift */; };
+		C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */; };
+		C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF72690A87200BF36F4 /* TimerUtils.swift */; };
+		C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */; };
+		C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */; };
+		C1D43B522673A98F004322B4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B512673A98F004322B4 /* EditView.swift */; };
+		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
+		C1F56A092694C829003D219B /* TimersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F56A082694C829003D219B /* TimersStorage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C13D788E2668240F00A421AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13D786F2668240500A421AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C13D78762668240600A421AE;
+			remoteInfo = Willpower;
+		};
+		C13D78992668240F00A421AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C13D786F2668240500A421AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C13D78762668240600A421AE;
+			remoteInfo = Willpower;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C13D78772668240600A421AE /* Willpower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willpower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13D787A2668240600A421AE /* WillpowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerApp.swift; sourceTree = "<group>"; };
+		C13D787C2668240600A421AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C13D787E2668240E00A421AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C13D78812668240E00A421AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C13D78832668240E00A421AE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C13D78862668240E00A421AE /* Willpower.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Willpower.xcdatamodel; sourceTree = "<group>"; };
+		C13D78882668240E00A421AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13D788D2668240F00A421AE /* WillpowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WillpowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13D78912668240F00A421AE /* WillpowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerTests.swift; sourceTree = "<group>"; };
+		C13D78932668240F00A421AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13D78982668240F00A421AE /* WillpowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WillpowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13D789C2668240F00A421AE /* WillpowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerUITests.swift; sourceTree = "<group>"; };
+		C13D789E2668240F00A421AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13D78AD2669692F00A421AE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		C13D78C2266A92BA00A421AE /* WPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTimer.swift; sourceTree = "<group>"; };
+		C13D78C7266D7E1F00A421AE /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
+		C13D78CC2671510500A421AE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		C19F0CF72690A87200BF36F4 /* TimerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtils.swift; sourceTree = "<group>"; };
+		C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryView.swift; sourceTree = "<group>"; };
+		C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPassedTimeView.swift; sourceTree = "<group>"; };
+		C1D43B512673A98F004322B4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
+		C1F56A082694C829003D219B /* TimersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersStorage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C13D78742668240600A421AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D788A2668240F00A421AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D78952668240F00A421AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C13D786E2668240500A421AE = {
+			isa = PBXGroup;
+			children = (
+				C13D78792668240600A421AE /* Willpower */,
+				C13D78902668240F00A421AE /* WillpowerTests */,
+				C13D789B2668240F00A421AE /* WillpowerUITests */,
+				C13D78782668240600A421AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C13D78782668240600A421AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78772668240600A421AE /* Willpower.app */,
+				C13D788D2668240F00A421AE /* WillpowerTests.xctest */,
+				C13D78982668240F00A421AE /* WillpowerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C13D78792668240600A421AE /* Willpower */ = {
+			isa = PBXGroup;
+			children = (
+				C19F0CF62690A39000BF36F4 /* Utils */,
+				C19F0CF52690A38400BF36F4 /* Data */,
+				C19F0CF42690A35400BF36F4 /* View */,
+				C13D787A2668240600A421AE /* WillpowerApp.swift */,
+				C13D787E2668240E00A421AE /* Assets.xcassets */,
+				C13D78882668240E00A421AE /* Info.plist */,
+				C13D78852668240E00A421AE /* Willpower.xcdatamodeld */,
+				C13D78802668240E00A421AE /* Preview Content */,
+			);
+			path = Willpower;
+			sourceTree = "<group>";
+		};
+		C13D78802668240E00A421AE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78812668240E00A421AE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C13D78902668240F00A421AE /* WillpowerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78912668240F00A421AE /* WillpowerTests.swift */,
+				C13D78932668240F00A421AE /* Info.plist */,
+			);
+			path = WillpowerTests;
+			sourceTree = "<group>";
+		};
+		C13D789B2668240F00A421AE /* WillpowerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C13D789C2668240F00A421AE /* WillpowerUITests.swift */,
+				C13D789E2668240F00A421AE /* Info.plist */,
+			);
+			path = WillpowerUITests;
+			sourceTree = "<group>";
+		};
+		C19F0CF42690A35400BF36F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78CC2671510500A421AE /* DetailView.swift */,
+				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
+				C13D78AD2669692F00A421AE /* TimerView.swift */,
+				C13D787C2668240600A421AE /* ContentView.swift */,
+				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
+				C1D43B512673A98F004322B4 /* EditView.swift */,
+				C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */,
+				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C19F0CF52690A38400BF36F4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78C2266A92BA00A421AE /* WPTimer.swift */,
+				C1D43B5626793288004322B4 /* WPHistoryDates.swift */,
+				C1F56A082694C829003D219B /* TimersStorage.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C19F0CF62690A39000BF36F4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78832668240E00A421AE /* Persistence.swift */,
+				C19F0CF72690A87200BF36F4 /* TimerUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C13D78762668240600A421AE /* Willpower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13D78A12668240F00A421AE /* Build configuration list for PBXNativeTarget "Willpower" */;
+			buildPhases = (
+				C13D78732668240600A421AE /* Sources */,
+				C13D78742668240600A421AE /* Frameworks */,
+				C13D78752668240600A421AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Willpower;
+			productName = Willpower;
+			productReference = C13D78772668240600A421AE /* Willpower.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C13D788C2668240F00A421AE /* WillpowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13D78A42668240F00A421AE /* Build configuration list for PBXNativeTarget "WillpowerTests" */;
+			buildPhases = (
+				C13D78892668240F00A421AE /* Sources */,
+				C13D788A2668240F00A421AE /* Frameworks */,
+				C13D788B2668240F00A421AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C13D788F2668240F00A421AE /* PBXTargetDependency */,
+			);
+			name = WillpowerTests;
+			productName = WillpowerTests;
+			productReference = C13D788D2668240F00A421AE /* WillpowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C13D78972668240F00A421AE /* WillpowerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13D78A72668240F00A421AE /* Build configuration list for PBXNativeTarget "WillpowerUITests" */;
+			buildPhases = (
+				C13D78942668240F00A421AE /* Sources */,
+				C13D78952668240F00A421AE /* Frameworks */,
+				C13D78962668240F00A421AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C13D789A2668240F00A421AE /* PBXTargetDependency */,
+			);
+			name = WillpowerUITests;
+			productName = WillpowerUITests;
+			productReference = C13D78982668240F00A421AE /* WillpowerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C13D786F2668240500A421AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					C13D78762668240600A421AE = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					C13D788C2668240F00A421AE = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C13D78762668240600A421AE;
+					};
+					C13D78972668240F00A421AE = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C13D78762668240600A421AE;
+					};
+				};
+			};
+			buildConfigurationList = C13D78722668240500A421AE /* Build configuration list for PBXProject "Willpower" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C13D786E2668240500A421AE;
+			productRefGroup = C13D78782668240600A421AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C13D78762668240600A421AE /* Willpower */,
+				C13D788C2668240F00A421AE /* WillpowerTests */,
+				C13D78972668240F00A421AE /* WillpowerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C13D78752668240600A421AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13D78822668240E00A421AE /* Preview Assets.xcassets in Resources */,
+				C13D787F2668240E00A421AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D788B2668240F00A421AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D78962668240F00A421AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C13D78732668240600A421AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13D78AE2669693000A421AE /* TimerView.swift in Sources */,
+				C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */,
+				C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */,
+				C13D78CD2671510500A421AE /* DetailView.swift in Sources */,
+				C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */,
+				C13D78842668240E00A421AE /* Persistence.swift in Sources */,
+				C1F56A092694C829003D219B /* TimersStorage.swift in Sources */,
+				C13D787D2668240600A421AE /* ContentView.swift in Sources */,
+				C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */,
+				C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */,
+				C1D43B522673A98F004322B4 /* EditView.swift in Sources */,
+				C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */,
+				C13D78C8266D7E2000A421AE /* AddTimerView.swift in Sources */,
+				C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */,
+				C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D78892668240F00A421AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13D78922668240F00A421AE /* WillpowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13D78942668240F00A421AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13D789D2668240F00A421AE /* WillpowerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C13D788F2668240F00A421AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C13D78762668240600A421AE /* Willpower */;
+			targetProxy = C13D788E2668240F00A421AE /* PBXContainerItemProxy */;
+		};
+		C13D789A2668240F00A421AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C13D78762668240600A421AE /* Willpower */;
+			targetProxy = C13D78992668240F00A421AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C13D789F2668240F00A421AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C13D78A02668240F00A421AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C13D78A22668240F00A421AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Willpower/Preview Content\"";
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Willpower/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.Willpower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C13D78A32668240F00A421AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Willpower/Preview Content\"";
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Willpower/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.Willpower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C13D78A52668240F00A421AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				INFOPLIST_FILE = WillpowerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.WillpowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Willpower.app/Willpower";
+			};
+			name = Debug;
+		};
+		C13D78A62668240F00A421AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				INFOPLIST_FILE = WillpowerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.WillpowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Willpower.app/Willpower";
+			};
+			name = Release;
+		};
+		C13D78A82668240F00A421AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				INFOPLIST_FILE = WillpowerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.WillpowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Willpower;
+			};
+			name = Debug;
+		};
+		C13D78A92668240F00A421AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37HP8FM3TS;
+				INFOPLIST_FILE = WillpowerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallarusaz.WillpowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Willpower;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C13D78722668240500A421AE /* Build configuration list for PBXProject "Willpower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13D789F2668240F00A421AE /* Debug */,
+				C13D78A02668240F00A421AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13D78A12668240F00A421AE /* Build configuration list for PBXNativeTarget "Willpower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13D78A22668240F00A421AE /* Debug */,
+				C13D78A32668240F00A421AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13D78A42668240F00A421AE /* Build configuration list for PBXNativeTarget "WillpowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13D78A52668240F00A421AE /* Debug */,
+				C13D78A62668240F00A421AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13D78A72668240F00A421AE /* Build configuration list for PBXNativeTarget "WillpowerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13D78A82668240F00A421AE /* Debug */,
+				C13D78A92668240F00A421AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C13D78852668240E00A421AE /* Willpower.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C13D78862668240E00A421AE /* Willpower.xcdatamodel */,
+			);
+			currentVersion = C13D78862668240E00A421AE /* Willpower.xcdatamodel */;
+			path = Willpower.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C13D786F2668240500A421AE /* Project object */;
+}

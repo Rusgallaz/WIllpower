@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="WPHistoryDates" representedClassName="WPHistoryDates" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="timer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WPTimer" inverseName="historyDates" inverseEntity="WPTimer"/>
+    </entity>
+    <entity name="WPTimer" representedClassName="WPTimer" syncable="YES" codeGenerationType="class">
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="historyDates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WPHistoryDates" inverseName="timer" inverseEntity="WPHistoryDates"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="WPHistoryDates" positionX="-63" positionY="0" width="128" height="88"/>
+        <element name="WPTimer" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>
