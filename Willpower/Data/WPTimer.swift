@@ -83,6 +83,11 @@ extension WPTimer {
         return formatter.string(from: wrappedStarDate)
     }
     
+    static var exampleTimer: WPTimer {
+        let controller = PersistenceController(inMemory: true)
+        return example(context: controller.container.viewContext)
+    }
+    
     static func example(context: NSManagedObjectContext) -> WPTimer {
         let timer = WPTimer(context: context)
         timer.name = "Example"

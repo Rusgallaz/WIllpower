@@ -105,10 +105,7 @@ struct DetailView: View {
 }
 
 struct DetailView_Previews: PreviewProvider {
-    static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-    
-    
     static var previews: some View {
-        DetailView(timer:  WPTimer.example(context: contextView))
+        DetailView(timer:  WPTimer.exampleTimer)
     }
 }

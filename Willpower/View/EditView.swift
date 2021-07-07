@@ -8,40 +8,40 @@
 import SwiftUI
 
 struct EditView: View {
+    @EnvironmentObject var controller: PersistenceController
     @Environment(\.presentationMode) var presentationMode
-    @State private var timerName = ""
-    @State private var startDate = Date()
+    @State private var timerName: String
+    @State private var startDate: Date
     
     let timer: WPTimer
     
+    init(timer: WPTimer) {
+        self.timer = timer
+        _timerName = State(wrappedValue: timer.wrappedName)
+        _startDate = State(wrappedValue: timer.wrappedStarDate)
+    }
+    
     var body: some View {
-        VStack {
-            TextField("Timer name", text: $timerName)
-            DatePicker("Start date", selection: $startDate, in: ...Date())
+        Form {
+            Section(header: Text("Name and start date")) {
+                TextField("Timer name", text: $timerName)
+                DatePicker("Start date", selection: $startDate, in: ...Date())
+            }
             Button("Save", action: save)
-                .padding()
-            Spacer()
         }
-        .padding()
         .navigationBarTitle("Edit timer", displayMode: .inline)
-        .onAppear(perform: firstLoad)
     }
     
     private func save() {
         timer.name = timerName
         timer.startDate = startDate
-        PersistenceController.shared.save()
+        controller.save()
         presentationMode.wrappedValue.dismiss()
-    }
-    
-    private func firstLoad() {
-        timerName = timer.wrappedName
-        startDate = timer.wrappedStarDate
     }
 }
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(timer: WPTimer())
+        EditView(timer: WPTimer.exampleTimer)
     }
 }
