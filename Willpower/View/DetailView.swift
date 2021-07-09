@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct DetailView: View {
+    @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     @State private var passedTime = "0 seconds"
@@ -64,8 +65,8 @@ struct DetailView: View {
     }
     
     private func removeTimer() {
-        managedObjectContext.delete(timer)
-        PersistenceController.shared.save()
+        controller.delete(timer)
+        controller.save()
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -76,7 +77,7 @@ struct DetailView: View {
     private func restartTimer() {
         createHistory()
         timer.startDate = Date()
-        PersistenceController.shared.save()
+        controller.save()
         updateCurrentHistory()
     }
     
@@ -88,7 +89,7 @@ struct DetailView: View {
             timer.startDate = Date()
             timer.isActive = true
         }
-        PersistenceController.shared.save()
+        controller.save()
         updateCurrentHistory()
     }
     

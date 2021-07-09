@@ -33,10 +33,6 @@ class TimersStorage: NSObject, ObservableObject {
         }
     }
     
-    func removeTimer(_ timer: WPTimer) {
-        controller.managedObjectContext.delete(timer)
-        PersistenceController.shared.save()
-    }
 }
 
 extension TimersStorage: NSFetchedResultsControllerDelegate {

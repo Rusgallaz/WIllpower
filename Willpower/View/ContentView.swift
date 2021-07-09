@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isCreatingTimer = false
     @State private var timers = [WPTimer]()
@@ -52,9 +53,9 @@ struct ContentView: View {
     private func removeTimer(at offsets: IndexSet) {
         for index in offsets {
             let timer = timers[index]
-            managedObjectContext.delete(timer)
+            controller.delete(timer)
         }
-        PersistenceController.shared.save()
+        controller.save()
         fecthTimers()
     }
     

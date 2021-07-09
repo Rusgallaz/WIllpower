@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddTimerView: View {
+    @EnvironmentObject var controller: PersistenceController
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var name = ""
@@ -46,7 +47,7 @@ struct AddTimerView: View {
             timer.startDate = Date()
         }
         timer.isActive = true
-        PersistenceController.shared.save()
+        controller.save()
     }
 }
 
