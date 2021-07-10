@@ -33,6 +33,7 @@ struct EditView: View {
     }
     
     private func save() {
+        timer.objectWillChange.send()
         timer.name = timerName
         timer.startDate = startDate
         controller.save()

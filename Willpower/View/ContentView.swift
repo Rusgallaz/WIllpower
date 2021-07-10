@@ -12,24 +12,24 @@ struct ContentView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isCreatingTimer = false
-    @State private var timers = [WPTimer]()
+//    @State private var timers = [WPTimer]()
+    let timers: FetchRequest<WPTimer>
     
-    
-//    @FetchRequest(
-//        entity: WPTimer.entity(),
-//        sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
-//                          NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
-//    )
-//    var timers: FetchedResults<WPTimer>
+    init() {
+        timers = FetchRequest<WPTimer>(entity: WPTimer.entity(), sortDescriptors: [
+            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
+            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
+        ])
+    }
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(0 ..< timers.count, id: \.self) { index in
+                ForEach(timers.wrappedValue) { timer in
                     ZStack {
-                        TimerView(timer: timers[index])
+                        TimerView(timer: timer)
                             .listRowInsets(EdgeInsets())
-                        NavigationLink(destination: DetailView(timer: timers[index])) {
+                        NavigationLink(destination: DetailView(timer: timer)) {
                             EmptyView()
                         }.opacity(0)
                     }
@@ -52,7 +52,7 @@ struct ContentView: View {
     
     private func removeTimer(at offsets: IndexSet) {
         for index in offsets {
-            let timer = timers[index]
+            let timer = timers.wrappedValue[index]
             controller.delete(timer)
         }
         controller.save()
@@ -60,16 +60,16 @@ struct ContentView: View {
     }
     
     private func fecthTimers() {
-        let fetchRequest = NSFetchRequest<WPTimer>(entityName: "WPTimer")
-        fetchRequest.sortDescriptors = [
-            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
-            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
-        ]
-        guard let data = try? managedObjectContext.fetch(fetchRequest) else {
-            fatalError("Could load data from WPTimer ")
-        }
-
-        timers = data
+//        let fetchRequest = NSFetchRequest<WPTimer>(entityName: "WPTimer")
+//        fetchRequest.sortDescriptors = [
+//            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
+//            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
+//        ]
+//        guard let data = try? managedObjectContext.fetch(fetchRequest) else {
+//            fatalError("Could load data from WPTimer ")
+//        }
+//
+//        timers = data
     }
 }
 
