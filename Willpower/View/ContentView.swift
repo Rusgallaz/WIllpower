@@ -12,19 +12,17 @@ struct ContentView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isCreatingTimer = false
-    let timers: FetchRequest<WPTimer>
     
-    init() {
-        timers = FetchRequest<WPTimer>(entity: WPTimer.entity(), sortDescriptors: [
-            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
-            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
-        ])
-    }
+    @FetchRequest(
+        entity: WPTimer.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false), NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
+    )
+    var timers: FetchedResults<WPTimer>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(timers.wrappedValue) { timer in
+                ForEach(timers) { timer in
                     ZStack {
                         TimerView(timer: timer)
                             .listRowInsets(EdgeInsets())
@@ -50,7 +48,7 @@ struct ContentView: View {
     
     private func removeTimer(at offsets: IndexSet) {
         for index in offsets {
-            let timer = timers.wrappedValue[index]
+            let timer = timers[index]
             controller.delete(timer)
         }
         controller.save()
