@@ -15,10 +15,9 @@ struct DetailView: View {
     @State private var passedTime = "0 seconds"
     @State private var isShowingEditActions = false
     @State private var editSelection: String? = nil
-    @State private var currentHistory = [WPHistoryDates]()
 
     @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
-    let timer: WPTimer
+    @ObservedObject var timer: WPTimer
     
     var body: some View {
         VStack {
@@ -34,12 +33,11 @@ struct DetailView: View {
                 .font(.headline)
                 .padding(.top)
             
-            ListHistoryView(history: currentHistory)
+            ListHistoryView(history: timer.wrappedHistories)
             
             Spacer()
             NavigationLink(destination: EditView(timer: timer), tag: "Edit", selection: $editSelection) { EmptyView() }
         }
-        .onAppear(perform: updateCurrentHistory)
         .navigationBarTitle(timer.wrappedName, displayMode: .inline)
         .navigationBarItems(trailing: Button("Edit", action: showEditActions))
         .actionSheet(isPresented: $isShowingEditActions) {
@@ -75,13 +73,14 @@ struct DetailView: View {
     }
     
     private func restartTimer() {
+        timer.objectWillChange.send()
         createHistory()
         timer.startDate = Date()
         controller.save()
-        updateCurrentHistory()
     }
     
     private func stopStartTimer() {
+        timer.objectWillChange.send()
         if timer.isActive {
             createHistory()
             timer.isActive = false
@@ -90,7 +89,6 @@ struct DetailView: View {
             timer.isActive = true
         }
         controller.save()
-        updateCurrentHistory()
     }
     
     private func createHistory() {
@@ -98,10 +96,6 @@ struct DetailView: View {
         history.startDate = timer.startDate
         history.endDate = Date()
         timer.addToHistoryDates(history)
-    }
-    
-    private func updateCurrentHistory() {
-        currentHistory = timer.wrappedHistories
     }
 }
 
