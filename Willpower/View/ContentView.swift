@@ -12,7 +12,6 @@ struct ContentView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isCreatingTimer = false
-//    @State private var timers = [WPTimer]()
     let timers: FetchRequest<WPTimer>
     
     init() {
@@ -36,12 +35,11 @@ struct ContentView: View {
                 }
                 .onDelete(perform: removeTimer)
             }
-            .onAppear(perform: fecthTimers)
             .listStyle(PlainListStyle())
             .navigationBarTitle("Willpower")
             .navigationBarItems(trailing: Button("Add", action: addTimer))
         }
-        .sheet(isPresented: $isCreatingTimer, onDismiss: fecthTimers) {
+        .sheet(isPresented: $isCreatingTimer) {
             AddTimerView()
         }
     }
@@ -56,20 +54,6 @@ struct ContentView: View {
             controller.delete(timer)
         }
         controller.save()
-        fecthTimers()
-    }
-    
-    private func fecthTimers() {
-//        let fetchRequest = NSFetchRequest<WPTimer>(entityName: "WPTimer")
-//        fetchRequest.sortDescriptors = [
-//            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
-//            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
-//        ]
-//        guard let data = try? managedObjectContext.fetch(fetchRequest) else {
-//            fatalError("Could load data from WPTimer ")
-//        }
-//
-//        timers = data
     }
 }
 
