@@ -19,6 +19,7 @@
 		C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78C2266A92BA00A421AE /* WPTimer.swift */; };
 		C13D78C8266D7E2000A421AE /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78C7266D7E1F00A421AE /* AddTimerView.swift */; };
 		C13D78CD2671510500A421AE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78CC2671510500A421AE /* DetailView.swift */; };
+		C168061A269E20F4006653EA /* DetailAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */; };
 		C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */; };
 		C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF72690A87200BF36F4 /* TimerUtils.swift */; };
 		C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */; };
@@ -64,6 +65,7 @@
 		C13D78C2266A92BA00A421AE /* WPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTimer.swift; sourceTree = "<group>"; };
 		C13D78C7266D7E1F00A421AE /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
 		C13D78CC2671510500A421AE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdditionalInfoView.swift; sourceTree = "<group>"; };
 		C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		C19F0CF72690A87200BF36F4 /* TimerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtils.swift; sourceTree = "<group>"; };
 		C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				C1D43B512673A98F004322B4 /* EditView.swift */,
 				C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */,
 				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
+				C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */,
 				C1D43B522673A98F004322B4 /* EditView.swift in Sources */,
 				C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */,
+				C168061A269E20F4006653EA /* DetailAdditionalInfoView.swift in Sources */,
 				C13D78C8266D7E2000A421AE /* AddTimerView.swift in Sources */,
 				C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */,
 				C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */,

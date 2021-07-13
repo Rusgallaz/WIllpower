@@ -21,6 +21,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            Divider()
             if timer.isActive {
                 DetailPassedTimeView(timer: timer)
             } else {
@@ -28,6 +29,7 @@ struct DetailView: View {
                     .padding(.top)
                     .font(.title)
             }
+            Divider()
             
             Text("History")
                 .font(.headline)
@@ -100,7 +102,9 @@ struct DetailView: View {
 }
 
 struct DetailView_Previews: PreviewProvider {
+    static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
     static var previews: some View {
-        DetailView(timer:  WPTimer.exampleTimer)
+        DetailView(timer:  WPTimer.example(context: contextView))
     }
 }

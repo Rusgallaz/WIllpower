@@ -27,7 +27,7 @@ extension WPHistoryDates {
 
     }
     
-    var passedTime: String {
+    var passedTimeFormatted: String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
         formatter.allowedUnits = [.month, .day, .hour]

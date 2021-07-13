@@ -7,9 +7,7 @@
 
 import CoreData
 
-class PersistenceController: ObservableObject {
-//    static let shared = PersistenceController()
-    
+class PersistenceController: ObservableObject {    
     let container: NSPersistentContainer
 
     static var preview: PersistenceController = {
@@ -38,6 +36,10 @@ class PersistenceController: ObservableObject {
                 fatalError("Unresolved error \(error), \(error.localizedDescription)")
             }
         }
+    }
+    
+    func createSimpleData() throws {
+        
     }
     
     func save() {

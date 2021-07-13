@@ -14,7 +14,7 @@ struct HistoryRowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(historyDates.passedTime)
+            Text(historyDates.passedTimeFormatted)
                 .font(.headline)
             Text("\(historyDates.formattedStartDate) - \(historyDates.formattedEndDate)")
                 .font(.subheadline)
