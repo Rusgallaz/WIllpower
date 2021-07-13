@@ -6,27 +6,33 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DetailAdditionalInfoView: View {
+    
+    let timer: WPTimer
     
     var body: some View {
         VStack {
             HStack {
                 Text("Started date:")
                 Spacer()
-                Text("01.07.2021, 13:00")
+                Text(timer.formattedStartDate)
             }
             HStack {
                 Text("Total time:")
                 Spacer()
-                Text("12 days 2 hours")
+                Text(timer.formattedTotalPassedTime)
             }
         }
+        .padding([.horizontal])
     }
 }
 
 struct DetailAdditionalInfoView_Previews: PreviewProvider {
+    static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
     static var previews: some View {
-        DetailAdditionalInfoView()
+        DetailAdditionalInfoView(timer: WPTimer.example(context: contextView))
     }
 }

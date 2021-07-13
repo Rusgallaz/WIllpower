@@ -76,6 +76,18 @@ extension WPTimer {
         
         return formatter.string(from: wrappedStarDate, to: Date()) ?? "Unknown"
     }
+    var totalPassedTime: TimeInterval {
+        let historiesTimePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
+        return secondsPassed + historiesTimePassed
+    }
+    
+    var formattedTotalPassedTime: String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.month, .day, .hour]
+        
+        return formatter.string(from: totalPassedTime) ?? "Unknown"
+    }
     
     var formattedStartDate: String {
         let formatter = DateFormatter()

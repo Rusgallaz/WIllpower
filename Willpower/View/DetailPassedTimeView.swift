@@ -45,12 +45,7 @@ struct DetailPassedTimeView: View {
             }
             
             if !isCollapsed {
-                HStack {
-                    Text("Started date:")
-                    Spacer()
-                    Text(timer.formattedStartDate)
-                }
-                .padding([.horizontal])
+                DetailAdditionalInfoView(timer: timer)
             }
         }
         .onAppear(perform: updatePassedTime)
