@@ -28,6 +28,7 @@ struct EditView: View {
                 DatePicker("Start date", selection: $startDate, in: ...Date())
             }
             Button("Save", action: save)
+                .disabled(timerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
         }
         .navigationBarTitle("Edit timer", displayMode: .inline)
     }

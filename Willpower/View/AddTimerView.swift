@@ -17,7 +17,7 @@ struct AddTimerView: View {
     
     var body: some View {
         Form {
-            Section {
+            Section(header: Text("Name and start date")) {
                 TextField("Timer name", text: $name)
 
                 Toggle("Set custom start date", isOn: $isCustomStartDate)
