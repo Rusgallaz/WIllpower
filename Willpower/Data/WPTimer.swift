@@ -10,6 +10,8 @@ import CoreData
 
 extension WPTimer {
     
+    private static let oneDayInSeconds: Double = 60*60*24
+    
     var secondsPassed: TimeInterval {
         abs(wrappedStarDate.timeIntervalSinceNow)
     }
@@ -58,7 +60,7 @@ extension WPTimer {
     }
     
     var passedMoreThanDay: Bool {
-        return secondsPassed > 60*60*24
+        return secondsPassed > WPTimer.oneDayInSeconds
     }
     
     var passedTime: String {
@@ -66,16 +68,42 @@ extension WPTimer {
         formatter.unitsStyle = .positional
         formatter.allowedUnits = [.hour, .minute, .second]
         
-        return formatter.string(from: secondsPassed.truncatingRemainder(dividingBy: 60*60*24)) ?? "Unknown"
+        return formatter.string(from: secondsPassed.truncatingRemainder(dividingBy: WPTimer.oneDayInSeconds)) ?? "Unknown"
     }
     
     var passedDate: String {
         let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .full
+        formatter.unitsStyle = .abbreviated
         formatter.allowedUnits = [.month, .day,]
         
         return formatter.string(from: wrappedStarDate, to: Date()) ?? "Unknown"
     }
+    
+    private func passedDateComponent(unit: NSCalendar.Unit) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [unit]
+        
+        return formatter.string(from: wrappedStarDate, to: Date()) ?? "Unknown"
+    }
+    
+    var passedPrimaryTime: String {
+        let diffComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: wrappedStarDate, to: Date())
+        if let years = diffComponents.year, years > 0 {
+            return passedDateComponent(unit: .year)
+        } else if let months = diffComponents.month, months > 0 {
+            return passedDateComponent(unit: .month)
+        } else if let days = diffComponents.day, days > 0 {
+            return passedDateComponent(unit: .day)
+        } else {
+            return passedTime
+        }
+    }
+    
+    var passedSecondaryTime: String {
+        return ""
+    }
+    
     var totalPassedTime: TimeInterval {
         let historiesTimePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
         return secondsPassed + historiesTimePassed

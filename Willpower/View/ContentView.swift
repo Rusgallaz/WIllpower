@@ -35,7 +35,7 @@ struct ContentView: View {
             }
             .listStyle(PlainListStyle())
             .navigationBarTitle("Willpower")
-            .navigationBarItems(trailing: Button("Add", action: addTimer))
+//            .navigationBarItems(trailing: Button("Add", action: addTimer))
         }
         .sheet(isPresented: $isCreatingTimer) {
             AddTimerView()
