@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct EditView: View {
     @EnvironmentObject var controller: PersistenceController
@@ -43,7 +44,9 @@ struct EditView: View {
 }
 
 struct EditView_Previews: PreviewProvider {
+    static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
     static var previews: some View {
-        EditView(timer: WPTimer.exampleTimer)
+        EditView(timer: WPTimer.example(context: contextView))
     }
 }

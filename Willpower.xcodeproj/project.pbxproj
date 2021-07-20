@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13B78F426A4E8BF00DFB7A8 /* PassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */; };
 		C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787A2668240600A421AE /* WillpowerApp.swift */; };
 		C13D787D2668240600A421AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787C2668240600A421AE /* ContentView.swift */; };
 		C13D787F2668240E00A421AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13D787E2668240E00A421AE /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassedTimeView.swift; sourceTree = "<group>"; };
 		C13D78772668240600A421AE /* Willpower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willpower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13D787A2668240600A421AE /* WillpowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerApp.swift; sourceTree = "<group>"; };
 		C13D787C2668240600A421AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				C13D78CC2671510500A421AE /* DetailView.swift */,
+				C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */,
 				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
 				C13D78AD2669692F00A421AE /* TimerView.swift */,
 				C13D787C2668240600A421AE /* ContentView.swift */,
@@ -335,6 +338,7 @@
 				C13D787D2668240600A421AE /* ContentView.swift in Sources */,
 				C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */,
 				C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */,
+				C13B78F426A4E8BF00DFB7A8 /* PassedTimeView.swift in Sources */,
 				C1D43B522673A98F004322B4 /* EditView.swift in Sources */,
 				C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */,
 				C168061A269E20F4006653EA /* DetailAdditionalInfoView.swift in Sources */,

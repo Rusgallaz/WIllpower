@@ -30,7 +30,8 @@ extension WPHistoryDates {
     var passedTimeFormatted: String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
-        formatter.allowedUnits = [.month, .day, .hour]
+        formatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
+        formatter.maximumUnitCount = 2
         
         return formatter.string(from: wrappedStartDate, to: wrappedEndDate) ?? "Unknown"
     }

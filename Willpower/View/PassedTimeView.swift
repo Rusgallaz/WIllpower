@@ -10,23 +10,22 @@ import CoreData
 
 struct PassedTimeView: View {
     let timer: WPTimer
+    let alignment: HorizontalAlignment
     
-    @State private var passedPrimaryTime = ""
-    @State private var passedSecondaryTime = ""
+    @State private var passedPrimaryDate = ""
+    @State private var passedSecondaryDate = ""
     
     @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: alignment) {
+            Text(passedPrimaryDate)
+                .font(.title)
+            
             if timer.passedMoreThanDay {
-                Text(passedPrimaryTime)
-                    .font(.title)
-                Text(passedSecondaryTime)
+                Text(passedSecondaryDate)
                     .font(.headline)
                     .foregroundColor(.secondary)
-            } else {
-                Text(passedPrimaryTime)
-                    .font(.title)
             }
         }
         .onAppear(perform: updatePassedTime)
@@ -37,8 +36,8 @@ struct PassedTimeView: View {
     
     private func updatePassedTime() {
         if timer.isActive {
-            passedPrimaryTime = timer.passedPrimaryTime
-            passedSecondaryTime = timer.passedTime
+            passedPrimaryDate = timer.passedPrimaryDate
+            passedSecondaryDate = timer.passedSecondaryDate
         }
     }
 }
@@ -47,6 +46,6 @@ struct PassedTimeView_Previews: PreviewProvider {
     static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
     static var previews: some View {
-        PassedTimeView(timer: WPTimer.example(context: contextView))
+        PassedTimeView(timer: WPTimer.example(context: contextView), alignment: .leading)
     }
 }

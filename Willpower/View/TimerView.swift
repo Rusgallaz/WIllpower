@@ -10,40 +10,19 @@ import Combine
 import CoreData
 
 struct TimerView: View {
-    @State private var timeValue: String
-    @State private var timeType: String
-    @State var timerEvent = Timer.publish(every: 1.0, tolerance: 0.1, on: .main, in: .common).autoconnect()
-    
     @ObservedObject var timer: WPTimer
-    
-    init(timer: WPTimer) {
-        self.timer = timer
-        _timeValue = State(wrappedValue: String(timer.timeValue))
-        _timeType = State(wrappedValue: timer.timeType)
-    }
-    
+
     var body: some View {
         HStack {
             Text(timer.wrappedName)
             Spacer()
             if timer.isActive {
-                Text(timeValue)
-                    .font(.largeTitle)
-                Text(timeType)
-                    .font(.headline)
+                PassedTimeView(timer: timer, alignment: .trailing)
             }
         }
         .padding(.horizontal)
         .frame(height: 64, alignment: .center)
         .background(timer.isActive ? Color.green : Color.gray)
-        .onReceive(timerEvent) { _ in updateTimerValue() }
-    }
-    
-    private func updateTimerValue() {
-        if timer.isActive {
-            timeValue = String(timer.timeValue)
-            timeType = timer.timeType
-        }
     }
 }
 
