@@ -18,24 +18,38 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false), NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
     )
     var timers: FetchedResults<WPTimer>
-
+    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(timers) { timer in
-                    ZStack {
-                        TimerView(timer: timer)
-                            .listRowInsets(EdgeInsets())
+            ZStack {
+                Color(red: 233/255, green: 234/255, blue: 243/255).edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    ForEach(timers) { timer in
                         NavigationLink(destination: DetailView(timer: timer)) {
-                            EmptyView()
-                        }.opacity(0)
+                            TimerView(timer: timer)
+                        }.buttonStyle(PlainButtonStyle())
                     }
+                    .onDelete(perform: removeTimer)
                 }
-                .onDelete(perform: removeTimer)
+                VStack {
+                    Spacer()
+                    Button(action: addTimer) {
+                        Text("Add new timer")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, maxHeight: 60)
+                            .background(Color(red: 107/255, green: 78/255, blue: 200/255))
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                    }
+                    .buttonStyle(.plain)
+                    .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: 2)
+                    .padding([.horizontal], 30)
+                    .padding([.bottom], 20)
+                }
+                
             }
-            .listStyle(PlainListStyle())
-            .navigationBarTitle("Willpower")
-//            .navigationBarItems(trailing: Button("Add", action: addTimer))
+            .navigationBarTitle("Timers")
         }
         .sheet(isPresented: $isCreatingTimer) {
             AddTimerView()

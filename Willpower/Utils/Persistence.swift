@@ -13,7 +13,7 @@ class PersistenceController: ObservableObject {
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         let viewContext = controller.container.viewContext
-        for index in 0..<10 {
+        for index in 0..<3 {
             let newTimer = WPTimer(context: viewContext)
             let newDates = WPHistoryDates(context: viewContext)
             newDates.startDate = Date().addingTimeInterval(Double(index * -3000))
