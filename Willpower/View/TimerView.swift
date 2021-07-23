@@ -15,14 +15,19 @@ struct TimerView: View {
     var body: some View {
         HStack {
             Text(timer.wrappedName)
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(timer.isActive ? .black : .white)
             Spacer()
             if timer.isActive {
                 PassedTimeView(timer: timer, alignment: .trailing)
             }
         }
         .padding(.horizontal)
-        .frame(height: 64, alignment: .center)
-        .background(timer.isActive ? Color.green : Color.gray)
+        .frame(height: 86, alignment: .center)
+        .background(timer.isActive ? Color.white : Color(red: 84/255, green: 83/255, blue: 88/255))
+        .clipShape(RoundedRectangle(cornerRadius: 30))
+        .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 4)
     }
 }
 

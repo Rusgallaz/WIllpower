@@ -27,6 +27,8 @@ struct ContentView: View {
                     ForEach(timers) { timer in
                         NavigationLink(destination: DetailView(timer: timer)) {
                             TimerView(timer: timer)
+                                .padding([.horizontal], 20)
+                                .padding([.bottom], 10)
                         }.buttonStyle(PlainButtonStyle())
                     }
                     .onDelete(perform: removeTimer)
