@@ -20,7 +20,7 @@ class PersistenceController: ObservableObject {
             newDates.endDate = Date().addingTimeInterval(Double(index * -500))
             newTimer.historyDates = NSSet(object: newDates)
             newTimer.name = "Timer example \(index)"
-            newTimer.startDate = Date().addingTimeInterval(Double(index * -50))
+            newTimer.startDate = Date().addingTimeInterval(Double(index * -5000))
             newTimer.isActive = index % 2 == 0
         }
         return controller

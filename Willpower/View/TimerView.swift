@@ -15,7 +15,7 @@ struct TimerView: View {
     var body: some View {
         HStack {
             Text(timer.wrappedName)
-                .font(.title)
+                .font(.title2)
                 .fontWeight(.semibold)
                 .foregroundColor(timer.isActive ? .black : .white)
             Spacer()
@@ -24,9 +24,9 @@ struct TimerView: View {
             }
         }
         .padding(.horizontal)
-        .frame(height: 86, alignment: .center)
+        .frame(height: 70, alignment: .center)
         .background(timer.isActive ? Color.white : Color(red: 84/255, green: 83/255, blue: 88/255))
-        .clipShape(RoundedRectangle(cornerRadius: 30))
+        .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 4)
     }
 }

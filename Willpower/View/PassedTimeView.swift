@@ -20,11 +20,12 @@ struct PassedTimeView: View {
     var body: some View {
         VStack(alignment: alignment) {
             Text(passedPrimaryDate)
-                .font(timer.passedMoreThanDay ? .title : .largeTitle).bold()
+                .font(timer.passedMoreThanDay ? .title2 : .title)
+                .fontWeight(.semibold)
             
             if timer.passedMoreThanDay {
                 Text(passedSecondaryDate)
-                    .font(.headline)
+                    .font(.body)
                     .foregroundColor(.secondary)
             }
         }

@@ -23,17 +23,17 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color(red: 233/255, green: 234/255, blue: 243/255).edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    ForEach(timers) { timer in
-                        NavigationLink(destination: DetailView(timer: timer)) {
-                            TimerView(timer: timer)
-                                .padding([.horizontal], 20)
-                                .padding([.bottom], 10)
-                        }.buttonStyle(PlainButtonStyle())
-                    }
-                    .onDelete(perform: removeTimer)
-                }
                 VStack {
+                    ScrollView {
+                        ForEach(timers) { timer in
+                            NavigationLink(destination: DetailView(timer: timer)) {
+                                TimerView(timer: timer)
+                                    .padding([.horizontal], 20)
+                                    .padding([.bottom], 10)
+                            }.buttonStyle(PlainButtonStyle())
+                        }
+                        .onDelete(perform: removeTimer)
+                    }
                     Spacer()
                     Button(action: addTimer) {
                         Text("Add new timer")
@@ -47,7 +47,6 @@ struct ContentView: View {
                     .buttonStyle(.plain)
                     .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: 2)
                     .padding([.horizontal], 30)
-                    .padding([.bottom], 20)
                 }
                 
             }
