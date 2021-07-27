@@ -11,7 +11,7 @@ import CoreData
 struct DetailPassedTimeView: View {
     let timer: WPTimer
     
-    @State private var isCollapsed = true
+    @State private var isShowingAdditional = false
     
     var body: some View {
         VStack {
@@ -19,19 +19,19 @@ struct DetailPassedTimeView: View {
                 PassedTimeView(timer: timer, alignment: .leading)
                     .padding([.horizontal])
                 Spacer()
-                Image(systemName: isCollapsed ? "chevron.right" : "chevron.down")
+                Image(systemName: isShowingAdditional ? "chevron.down" : "chevron.right")
                     .padding()
-
             }
             .contentShape(Rectangle())
             .onTapGesture {
                 withAnimation {
-                    self.isCollapsed.toggle()
+                    self.isShowingAdditional.toggle()
                 }
             }
             
-            if !isCollapsed {
+            if isShowingAdditional {
                 DetailAdditionalInfoView(timer: timer)
+                    .padding([.top], 5)
             }
         }
     }

@@ -15,26 +15,37 @@ struct AddTimerView: View {
     @State private var startDate = Date()
     @State private var isCustomStartDate = false
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = .white
+    }
+    
     var body: some View {
-        Form {
-            Section(header: Text("Name and start date")) {
+        NavigationView {
+            Form {
                 TextField("Timer name", text: $name)
-
-                Toggle("Set custom start date", isOn: $isCustomStartDate)
+                
+                Toggle("Set custom start date", isOn: $isCustomStartDate.animation())
                 
                 if isCustomStartDate {
                     DatePicker(selection: $startDate, in: ...Date()) {
                         Text("Start date")
                     }
+                    .datePickerStyle(.graphical)
                 }
             }
-            
-            Button("Create") {
-                save()
-                self.presentationMode.wrappedValue.dismiss()
-            }
-            .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-
+            .navigationBarTitle(Text("New timer"), displayMode: .inline)
+            .navigationBarItems(
+                leading: Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("Cancel")
+            }),
+                trailing: Button(action: {
+                    self.save()
+                    self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Save").bold()
+            }.disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty))
         }
     }
     
@@ -48,6 +59,7 @@ struct AddTimerView: View {
         }
         timer.isActive = true
         controller.save()
+        
     }
 }
 

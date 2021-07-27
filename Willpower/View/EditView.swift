@@ -20,18 +20,30 @@ struct EditView: View {
         self.timer = timer
         _timerName = State(wrappedValue: timer.wrappedName)
         _startDate = State(wrappedValue: timer.wrappedStarDate)
+        
+        UINavigationBar.appearance().backgroundColor = .white
     }
     
     var body: some View {
-        Form {
-            Section(header: Text("Name and start date")) {
+        NavigationView {
+            Form {
                 TextField("Timer name", text: $timerName)
                 DatePicker("Start date", selection: $startDate, in: ...Date())
+                    .datePickerStyle(.graphical)
             }
-            Button("Save", action: save)
-                .disabled(timerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            .navigationBarTitle(Text("Edit timer"), displayMode: .inline)
+            .navigationBarItems(
+                leading: Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text("Cancel")
+            }),
+                trailing: Button(action: {
+                    self.save()
+            }) {
+                Text("Save").bold()
+            }.disabled(timerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty))
         }
-        .navigationBarTitle("Edit timer", displayMode: .inline)
     }
     
     private func save() {

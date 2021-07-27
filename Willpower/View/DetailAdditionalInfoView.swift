@@ -13,18 +13,18 @@ struct DetailAdditionalInfoView: View {
     let timer: WPTimer
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Started date:")
-                Spacer()
-                Text(timer.formattedStartDate)
-            }
-            HStack {
-                Text("Total time:")
-                Spacer()
-                Text(timer.formattedTotalPassedTime)
-            }
+        VStack(alignment: .leading) {
+            Text("Start date:")
+                .foregroundColor(.secondary)
+            Text(timer.formattedStartDate)
+                .bold()
+                .padding([.bottom], 3)
+            Text("Total time:")
+                .foregroundColor(.secondary)
+            Text(timer.formattedTotalPassedTime)
+                .bold()
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding([.horizontal])
     }
 }

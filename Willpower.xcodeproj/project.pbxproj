@@ -27,6 +27,7 @@
 		C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */; };
 		C1D43B522673A98F004322B4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B512673A98F004322B4 /* EditView.swift */; };
 		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
+		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
 		C1F56A092694C829003D219B /* TimersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F56A082694C829003D219B /* TimersStorage.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPassedTimeView.swift; sourceTree = "<group>"; };
 		C1D43B512673A98F004322B4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
+		C1DB779226B0733800F4CBA1 /* Color-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-extensions.swift"; sourceTree = "<group>"; };
 		C1F56A082694C829003D219B /* TimersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 			children = (
 				C13D78832668240E00A421AE /* Persistence.swift */,
 				C19F0CF72690A87200BF36F4 /* TimerUtils.swift */,
+				C1DB779226B0733800F4CBA1 /* Color-extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C13D78C8266D7E2000A421AE /* AddTimerView.swift in Sources */,
 				C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */,
 				C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */,
+				C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

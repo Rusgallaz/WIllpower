@@ -22,35 +22,25 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 233/255, green: 234/255, blue: 243/255).edgesIgnoringSafeArea(.all)
+                Color.WPBackground.edgesIgnoringSafeArea(.all)
                 VStack {
                     ScrollView {
                         ForEach(timers) { timer in
                             NavigationLink(destination: DetailView(timer: timer)) {
                                 TimerView(timer: timer)
                                     .padding([.horizontal], 20)
-                                    .padding([.bottom], 10)
+                                    .padding([.bottom], 1)
                             }.buttonStyle(PlainButtonStyle())
                         }
                         .onDelete(perform: removeTimer)
                     }
-                    Spacer()
-                    Button(action: addTimer) {
-                        Text("Add new timer")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity, maxHeight: 60)
-                            .background(Color(red: 107/255, green: 78/255, blue: 200/255))
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                    }
-                    .buttonStyle(.plain)
-                    .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: 2)
-                    .padding([.horizontal], 30)
                 }
-                
+                .padding([.top], 20)
             }
             .navigationBarTitle("Timers")
+            .navigationBarItems(trailing: Button(action: addTimer) {
+                Image(systemName: "plus")
+            })
         }
         .sheet(isPresented: $isCreatingTimer) {
             AddTimerView()

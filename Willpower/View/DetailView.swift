@@ -14,7 +14,7 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var passedTime = "0 seconds"
     @State private var isShowingEditActions = false
-    @State private var editSelection: String? = nil
+    @State private var isShowingEditView = false
 
     @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
     @ObservedObject var timer: WPTimer
@@ -38,12 +38,14 @@ struct DetailView: View {
             ListHistoryView(history: timer.wrappedHistories)
             
             Spacer()
-            NavigationLink(destination: EditView(timer: timer), tag: "Edit", selection: $editSelection) { EmptyView() }
         }
         .navigationBarTitle(timer.wrappedName, displayMode: .inline)
         .navigationBarItems(trailing: Button("Edit", action: showEditActions))
         .actionSheet(isPresented: $isShowingEditActions) {
             ActionSheet(title: Text("Timer settings"), buttons: editButtons)
+        }
+        .sheet(isPresented: $isShowingEditView) {
+            EditView(timer: timer)
         }
     }
     
@@ -71,7 +73,7 @@ struct DetailView: View {
     }
     
     private func editTimer() {
-        self.editSelection = "Edit"
+        self.isShowingEditView = true
     }
     
     private func restartTimer() {
