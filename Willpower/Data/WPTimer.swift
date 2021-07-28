@@ -78,8 +78,11 @@ extension WPTimer {
     }
     
     var totalPassedSeconds: TimeInterval {
-        let historiesTimePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
-        return secondsPassed + historiesTimePassed
+        var timePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
+        if isActive {
+            timePassed += secondsPassed
+        }
+        return timePassed
     }
     
     var formattedTotalPassedTime: String {
@@ -100,7 +103,8 @@ extension WPTimer {
     static func example(context: NSManagedObjectContext) -> WPTimer {
         let timer = WPTimer(context: context)
         timer.name = "Example"
-        let startDateComp = DateComponents(month: -2 , day: -10, hour: -2, minute: -32, second: -14)
+//        let startDateComp = DateComponents(month: -2 , day: -10, hour: -2, minute: -32, second: -14)
+        let startDateComp = DateComponents(hour: -2, minute: -32, second: -14)
         timer.startDate = Calendar.current.date(byAdding: startDateComp, to: Date())
         timer.isActive = true
         

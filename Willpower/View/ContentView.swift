@@ -23,8 +23,8 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color.WPBackground.edgesIgnoringSafeArea(.all)
-                VStack {
-                    ScrollView {
+                ScrollView {
+                    VStack {
                         ForEach(timers) { timer in
                             NavigationLink(destination: DetailView(timer: timer)) {
                                 TimerView(timer: timer)
@@ -34,12 +34,13 @@ struct ContentView: View {
                         }
                         .onDelete(perform: removeTimer)
                     }
+                    .padding(.top)
                 }
-                .padding([.top], 20)
             }
             .navigationBarTitle("Timers")
             .navigationBarItems(trailing: Button(action: addTimer) {
                 Image(systemName: "plus")
+                    .font(.title2)
             })
         }
         .sheet(isPresented: $isCreatingTimer) {

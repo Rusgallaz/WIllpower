@@ -22,15 +22,9 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Divider()
-            if timer.isActive {
-                DetailPassedTimeView(timer: timer)
-            } else {
-                Text("Timer is stopped")
-                    .padding(.top)
-                    .font(.title)
-            }
+            DetailPassedTimeView(timer: timer)
             Divider()
-            
+              
             Text("History")
                 .font(.headline)
                 .padding(.top)
@@ -52,12 +46,12 @@ struct DetailView: View {
     private var editButtons: [ActionSheet.Button] {
         var buttons = [
             ActionSheet.Button.default(Text("Edit"), action: editTimer),
-            ActionSheet.Button.default(Text("Remove"), action: removeTimer),
             ActionSheet.Button.default(Text(timer.isActive ? "Stop" : "Start"), action: stopStartTimer),
+            ActionSheet.Button.destructive(Text("Remove"), action: removeTimer),
             ActionSheet.Button.cancel()
         ]
         if timer.isActive {
-            buttons.append(ActionSheet.Button.default(Text("Restart"), action: restartTimer))
+            buttons.insert(ActionSheet.Button.default(Text("Restart"), action: restartTimer), at: 0)
         }
         return buttons
     }
