@@ -12,7 +12,7 @@ struct DetailView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
-    @State private var passedTime = "0 seconds"
+    @State private var passedTime = ""
     @State private var isShowingEditActions = false
     @State private var isShowingEditView = false
 
@@ -34,7 +34,10 @@ struct DetailView: View {
             Spacer()
         }
         .navigationBarTitle(timer.wrappedName, displayMode: .inline)
-        .navigationBarItems(trailing: Button("Edit", action: showEditActions))
+        .navigationBarItems(trailing: Button(action: showEditActions, label: {
+            Image(systemName: "gearshape.fill")
+                .foregroundColor(.black)
+        }))
         .actionSheet(isPresented: $isShowingEditActions) {
             ActionSheet(title: Text("Timer settings"), buttons: editButtons)
         }

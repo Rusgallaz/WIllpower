@@ -22,7 +22,7 @@ struct AddTimerView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Timer name", text: $name)
+                TextField(LocalizedStringKey("Timer name"), text: $name)
                 
                 Toggle("Set custom start date", isOn: $isCustomStartDate.animation())
                 

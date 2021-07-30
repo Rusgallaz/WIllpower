@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  Willpower
+
+  Created by Ruslan Gallyamov on 30.07.2021.
+  
+*/
+
+/* main */
+"Timers" = "Timers";
+
+/* add/edit timer */
+"New timer" = "New timer";
+"Timer name" = "Timer name";
+"Set custom start date" = "Set custom start date";
+"Start date" = "Start date";
+"Cancel" = "Cancel";
+"Save" = "Save";
+
+/* detail timer */
+"Edit" = "Edit";
+"Edit timer" = "Edit timer";
+"Timer settings" = "Timer settings";
+"Stop" = "Stop";
+"Start" = "Start";
+"Remove" = "Remove";
+"Restart" = "Restart";
+"Timer is stopped" = "Timer is stopped";
+"Start date:" = "Start date:";
+"Total time:" = "Total time:";
+"History" = "History";

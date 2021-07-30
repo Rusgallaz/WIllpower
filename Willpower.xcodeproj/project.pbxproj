@@ -29,6 +29,7 @@
 		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
 		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
 		C1F56A092694C829003D219B /* TimersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F56A082694C829003D219B /* TimersStorage.swift */; };
+		C1F78D8926B48C1E00CA6F22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
 		C1DB779226B0733800F4CBA1 /* Color-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-extensions.swift"; sourceTree = "<group>"; };
 		C1F56A082694C829003D219B /* TimersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersStorage.swift; sourceTree = "<group>"; };
+		C1F78D8A26B48C1E00CA6F22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C1F78D8C26B48C2200CA6F22 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 				C19F0CF52690A38400BF36F4 /* Data */,
 				C19F0CF42690A35400BF36F4 /* View */,
 				C13D787A2668240600A421AE /* WillpowerApp.swift */,
+				C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */,
 				C13D787E2668240E00A421AE /* Assets.xcassets */,
 				C13D78882668240E00A421AE /* Info.plist */,
 				C13D78852668240E00A421AE /* Willpower.xcdatamodeld */,
@@ -287,6 +291,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = C13D786E2668240500A421AE;
 			productRefGroup = C13D78782668240600A421AE /* Products */;
@@ -306,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13D78822668240E00A421AE /* Preview Assets.xcassets in Resources */,
+				C1F78D8926B48C1E00CA6F22 /* Localizable.strings in Resources */,
 				C13D787F2668240E00A421AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +388,19 @@
 			targetProxy = C13D78992668240F00A421AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1F78D8A26B48C1E00CA6F22 /* en */,
+				C1F78D8C26B48C2200CA6F22 /* ru */,
+			);
+			name = Localizable.strings;
+			path = Willpower;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C13D789F2668240F00A421AE /* Debug */ = {
