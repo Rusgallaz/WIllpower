@@ -12,10 +12,10 @@ struct PassedTimeView: View {
     let timer: WPTimer
     let alignment: HorizontalAlignment
     
+    @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
+    
     @State private var passedPrimaryDate = ""
     @State private var passedSecondaryDate = ""
-    
-    @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack(alignment: alignment) {
@@ -30,9 +30,7 @@ struct PassedTimeView: View {
             }
         }
         .onAppear(perform: updatePassedTime)
-        .onReceive(timerEvent) {_ in
-            updatePassedTime()
-        }
+        .onReceive(timerEvent) {_ in updatePassedTime() }
     }
     
     private func updatePassedTime() {

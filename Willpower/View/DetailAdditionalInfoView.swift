@@ -19,6 +19,7 @@ struct DetailAdditionalInfoView: View {
             Text(timer.formattedStartDate)
                 .bold()
                 .padding([.bottom], 3)
+            
             Text("Total time:")
                 .foregroundColor(.secondary)
             Text(timer.formattedTotalPassedTime)

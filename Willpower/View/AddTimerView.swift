@@ -11,6 +11,7 @@ struct AddTimerView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     @State private var name = ""
     @State private var startDate = Date()
     @State private var isCustomStartDate = false
@@ -19,13 +20,25 @@ struct AddTimerView: View {
         UINavigationBar.appearance().backgroundColor = .white
     }
     
+    private var cancelButton: some View {
+        Button("Cancel") {
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    private var saveButton: some View {
+        Button(action: save) {
+            Text("Save").bold()
+        }
+        .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+    }
+    
     var body: some View {
         NavigationView {
             Form {
                 TextField(LocalizedStringKey("Timer name"), text: $name)
                 
                 Toggle("Set custom start date", isOn: $isCustomStartDate.animation())
-                
                 if isCustomStartDate {
                     DatePicker(selection: $startDate, in: ...Date()) {
                         Text("Start date")
@@ -34,18 +47,7 @@ struct AddTimerView: View {
                 }
             }
             .navigationBarTitle(Text("New timer"), displayMode: .inline)
-            .navigationBarItems(
-                leading: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Cancel")
-            }),
-                trailing: Button(action: {
-                    self.save()
-                    self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Save").bold()
-            }.disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty))
+            .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }
     }
     
@@ -59,7 +61,7 @@ struct AddTimerView: View {
         }
         timer.isActive = true
         controller.save()
-        
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

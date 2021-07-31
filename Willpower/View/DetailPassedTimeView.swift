@@ -18,28 +18,26 @@ struct DetailPassedTimeView: View {
             HStack {
                 if timer.isActive {
                     PassedTimeView(timer: timer, alignment: .leading)
-                        .padding([.horizontal])
                 } else {
-                    Text("Timer is stopped")
-                        .font(.title)
-                        .padding([.horizontal])
-                        .padding([.bottom], 0)
+                    StoppedTimerView()
                 }
                 Spacer()
                 Image(systemName: isShowingAdditional ? "chevron.down" : "chevron.right")
-                    .padding()
             }
+            .padding(.horizontal)
             .contentShape(Rectangle())
-            .onTapGesture {
-                withAnimation {
-                    self.isShowingAdditional.toggle()
-                }
-            }
+            .onTapGesture(perform: toggleAdditionalInfo)
             
             if isShowingAdditional {
                 DetailAdditionalInfoView(timer: timer)
                     .padding([.top], 5)
             }
+        }
+    }
+    
+    private func toggleAdditionalInfo() {
+        withAnimation {
+            self.isShowingAdditional.toggle()
         }
     }
 }

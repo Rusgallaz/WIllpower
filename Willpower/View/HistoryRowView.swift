@@ -16,10 +16,10 @@ struct HistoryRowView: View {
         VStack(alignment: .leading) {
             Text(historyDates.passedTimeFormatted)
                 .font(.headline)
+            
             Text("\(historyDates.formattedStartDate) - \(historyDates.formattedEndDate)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            
         }
     }
 }

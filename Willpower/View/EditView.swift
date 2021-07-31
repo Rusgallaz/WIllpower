@@ -11,6 +11,7 @@ import CoreData
 struct EditView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.presentationMode) var presentationMode
+    
     @State private var timerName: String
     @State private var startDate: Date
     
@@ -24,6 +25,19 @@ struct EditView: View {
         UINavigationBar.appearance().backgroundColor = .white
     }
     
+    private var cancelButton: some View {
+        Button("Cancel") {
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    private var saveButton: some View {
+        Button(action: save) {
+            Text("Save").bold()
+        }
+        .disabled(timerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -32,17 +46,7 @@ struct EditView: View {
                     .datePickerStyle(.graphical)
             }
             .navigationBarTitle(Text("Edit timer"), displayMode: .inline)
-            .navigationBarItems(
-                leading: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Cancel")
-            }),
-                trailing: Button(action: {
-                    self.save()
-            }) {
-                Text("Save").bold()
-            }.disabled(timerName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty))
+            .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }
     }
     

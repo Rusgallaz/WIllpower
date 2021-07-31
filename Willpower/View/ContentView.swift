@@ -9,55 +9,28 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @EnvironmentObject var controller: PersistenceController
-    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isCreatingTimer = false
     
-    @FetchRequest(
-        entity: WPTimer.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false), NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
-    )
-    var timers: FetchedResults<WPTimer>
+    private var addTimerButton: some View {
+        Button(action: {
+            isCreatingTimer = true
+        }) {
+            Image(systemName: "plus").font(.title2)
+        }
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
                 Color.WPBackground.edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    VStack {
-                        ForEach(timers) { timer in
-                            NavigationLink(destination: DetailView(timer: timer)) {
-                                TimerView(timer: timer)
-                                    .padding([.horizontal], 20)
-                                    .padding([.bottom], 1)
-                            }.buttonStyle(PlainButtonStyle())
-                        }
-                        .onDelete(perform: removeTimer)
-                    }
-                    .padding(.top)
-                }
+                TimersListView()
             }
             .navigationBarTitle("Timers")
-            .navigationBarItems(trailing: Button(action: addTimer) {
-                Image(systemName: "plus")
-                    .font(.title2)
-            })
+            .navigationBarItems(trailing: addTimerButton)
         }
         .sheet(isPresented: $isCreatingTimer) {
             AddTimerView()
         }
-    }
-    
-    private func addTimer() {
-        isCreatingTimer = true
-    }
-    
-    private func removeTimer(at offsets: IndexSet) {
-        for index in offsets {
-            let timer = timers[index]
-            controller.delete(timer)
-        }
-        controller.save()
     }
 }
 

@@ -13,11 +13,8 @@ struct ListHistoryView: View {
     let history: [WPHistoryDates]
     
     var body: some View {
-        List(history, id:\.self) { history in
-            HistoryRowView(historyDates: history)
-                .listRowInsets(EdgeInsets())
-        }
-        .listStyle(InsetListStyle())
+        List(history, id:\.self, rowContent: HistoryRowView.init)
+            .listStyle(InsetListStyle())
     }
 }
 

@@ -12,11 +12,10 @@ struct DetailView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
-    @State private var passedTime = ""
+    
     @State private var isShowingEditActions = false
     @State private var isShowingEditView = false
 
-    @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
     @ObservedObject var timer: WPTimer
     
     var body: some View {
@@ -34,10 +33,7 @@ struct DetailView: View {
             Spacer()
         }
         .navigationBarTitle(timer.wrappedName, displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: showEditActions, label: {
-            Image(systemName: "gearshape.fill")
-                .foregroundColor(.black)
-        }))
+        .navigationBarItems(trailing: settingsButton)
         .actionSheet(isPresented: $isShowingEditActions) {
             ActionSheet(title: Text("Timer settings"), buttons: editButtons)
         }
@@ -46,15 +42,24 @@ struct DetailView: View {
         }
     }
     
+    private var settingsButton: some View {
+        Button(action: showEditActions) {
+            Image(systemName: "gearshape.fill")
+                .foregroundColor(.black)
+        }
+    }
+    
     private var editButtons: [ActionSheet.Button] {
         var buttons = [
             ActionSheet.Button.default(Text("Edit"), action: editTimer),
-            ActionSheet.Button.default(Text(timer.isActive ? "Stop" : "Start"), action: stopStartTimer),
             ActionSheet.Button.destructive(Text("Remove"), action: removeTimer),
             ActionSheet.Button.cancel()
         ]
         if timer.isActive {
             buttons.insert(ActionSheet.Button.default(Text("Restart"), action: restartTimer), at: 0)
+            buttons.insert(ActionSheet.Button.default(Text("Stop"), action: stopTimer), at: 0)
+        } else {
+            buttons.insert(ActionSheet.Button.default(Text("Start"), action: startTimer), at: 0)
         }
         return buttons
     }
@@ -74,21 +79,21 @@ struct DetailView: View {
     }
     
     private func restartTimer() {
+        stopTimer()
+        startTimer()
+    }
+    
+    private func startTimer() {
         timer.objectWillChange.send()
-        createHistory()
         timer.startDate = Date()
+        timer.isActive = true
         controller.save()
     }
     
-    private func stopStartTimer() {
+    private func stopTimer() {
         timer.objectWillChange.send()
-        if timer.isActive {
-            createHistory()
-            timer.isActive = false
-        } else {
-            timer.startDate = Date()
-            timer.isActive = true
-        }
+        createHistory()
+        timer.isActive = false
         controller.save()
     }
     

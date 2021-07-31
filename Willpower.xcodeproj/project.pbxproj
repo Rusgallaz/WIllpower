@@ -30,6 +30,8 @@
 		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
 		C1F56A092694C829003D219B /* TimersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F56A082694C829003D219B /* TimersStorage.swift */; };
 		C1F78D8926B48C1E00CA6F22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */; };
+		C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */; };
+		C1F78D9126B5C7E300CA6F22 /* StoppedTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		C1F56A082694C829003D219B /* TimersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersStorage.swift; sourceTree = "<group>"; };
 		C1F78D8A26B48C1E00CA6F22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1F78D8C26B48C2200CA6F22 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersListView.swift; sourceTree = "<group>"; };
+		C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoppedTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +181,12 @@
 				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
 				C13D78AD2669692F00A421AE /* TimerView.swift */,
 				C13D787C2668240600A421AE /* ContentView.swift */,
+				C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */,
 				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
 				C1D43B512673A98F004322B4 /* EditView.swift */,
 				C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */,
 				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
+				C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */,
 				C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */,
 			);
 			path = View;
@@ -338,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13D78AE2669693000A421AE /* TimerView.swift in Sources */,
+				C1F78D9126B5C7E300CA6F22 /* StoppedTimerView.swift in Sources */,
 				C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */,
 				C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */,
 				C13D78CD2671510500A421AE /* DetailView.swift in Sources */,
@@ -355,6 +362,7 @@
 				C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */,
 				C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */,
 				C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */,
+				C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
