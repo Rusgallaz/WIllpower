@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TimersListView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    
+
     @FetchRequest(
         entity: WPTimer.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false), NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
     )
     var timers: FetchedResults<WPTimer>
-    
+
     var body: some View {
         ScrollView {
             VStack {

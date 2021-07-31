@@ -11,18 +11,18 @@ import CoreData
 struct PassedTimeView: View {
     let timer: WPTimer
     let alignment: HorizontalAlignment
-    
+
     @State var timerEvent = Timer.publish(every: 1, tolerance: 0.1, on: .main, in: .common).autoconnect()
-    
+
     @State private var passedPrimaryDate = ""
     @State private var passedSecondaryDate = ""
-    
+
     var body: some View {
         VStack(alignment: alignment) {
             Text(passedPrimaryDate)
                 .font(timer.passedMoreThanDay ? .title2 : .title)
                 .fontWeight(.semibold)
-            
+
             if timer.passedMoreThanDay {
                 Text(passedSecondaryDate)
                     .font(.body)
@@ -32,7 +32,7 @@ struct PassedTimeView: View {
         .onAppear(perform: updatePassedTime)
         .onReceive(timerEvent) {_ in updatePassedTime() }
     }
-    
+
     private func updatePassedTime() {
         if timer.isActive {
             passedPrimaryDate = timer.passedPrimaryDate

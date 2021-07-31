@@ -33,7 +33,7 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static let contextView = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-    
+
     static var previews: some View {
         TimerView(timer: WPTimer.example(context: contextView))
     }

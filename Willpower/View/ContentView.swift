@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @State private var isCreatingTimer = false
-    
+
     private var addTimerButton: some View {
         Button(action: {
             isCreatingTimer = true
@@ -18,7 +18,7 @@ struct ContentView: View {
             Image(systemName: "plus").font(.title2)
         }
     }
-    
+
     var body: some View {
         NavigationView {
             ZStack {

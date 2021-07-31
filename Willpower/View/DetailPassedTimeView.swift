@@ -10,9 +10,9 @@ import CoreData
 
 struct DetailPassedTimeView: View {
     @ObservedObject var timer: WPTimer
-    
+
     @State private var isShowingAdditional = false
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -27,14 +27,14 @@ struct DetailPassedTimeView: View {
             .padding(.horizontal)
             .contentShape(Rectangle())
             .onTapGesture(perform: toggleAdditionalInfo)
-            
+
             if isShowingAdditional {
                 DetailAdditionalInfoView(timer: timer)
                     .padding([.top], 5)
             }
         }
     }
-    
+
     private func toggleAdditionalInfo() {
         withAnimation {
             self.isShowingAdditional.toggle()

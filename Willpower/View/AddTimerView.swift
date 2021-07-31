@@ -11,33 +11,33 @@ struct AddTimerView: View {
     @EnvironmentObject var controller: PersistenceController
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var managedObjectContext
-    
+
     @State private var name = ""
     @State private var startDate = Date()
     @State private var isCustomStartDate = false
-    
+
     init() {
         UINavigationBar.appearance().backgroundColor = .white
     }
-    
+
     private var cancelButton: some View {
         Button("Cancel") {
             self.presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     private var saveButton: some View {
         Button(action: save) {
             Text("Save").bold()
         }
         .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }
-    
+
     var body: some View {
         NavigationView {
             Form {
                 TextField(LocalizedStringKey("Timer name"), text: $name)
-                
+
                 Toggle("Set custom start date", isOn: $isCustomStartDate.animation())
                 if isCustomStartDate {
                     DatePicker(selection: $startDate, in: ...Date()) {
@@ -50,7 +50,7 @@ struct AddTimerView: View {
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }
     }
-    
+
     private func save() {
         let timer = WPTimer(context: managedObjectContext)
         timer.name = self.name

@@ -7,7 +7,7 @@
 
 import CoreData
 
-class PersistenceController: ObservableObject {    
+class PersistenceController: ObservableObject {
     let container: NSPersistentContainer
 
     static var preview: PersistenceController = {
@@ -25,23 +25,23 @@ class PersistenceController: ObservableObject {
         }
         return controller
     }()
-    
+
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Willpower")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores { (storeDescription, error) in
+        container.loadPersistentStores { (_, error) in
             if let error = error {
                 fatalError("Unresolved error \(error), \(error.localizedDescription)")
             }
         }
     }
-    
+
     func createSimpleData() throws {
-        
+
     }
-    
+
     func save() {
         if container.viewContext.hasChanges {
             do {
@@ -52,16 +52,16 @@ class PersistenceController: ObservableObject {
             }
         }
     }
-    
+
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-    
+
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = WPHistoryDates.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
         _ = try? container.viewContext.execute(batchDeleteRequest1)
-        
+
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = WPTimer.fetchRequest()
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)

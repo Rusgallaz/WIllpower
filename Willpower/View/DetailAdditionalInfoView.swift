@@ -9,9 +9,9 @@ import SwiftUI
 import CoreData
 
 struct DetailAdditionalInfoView: View {
-    
+
     let timer: WPTimer
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Start date:")
@@ -19,7 +19,7 @@ struct DetailAdditionalInfoView: View {
             Text(timer.formattedStartDate)
                 .bold()
                 .padding([.bottom], 3)
-            
+
             Text("Total time:")
                 .foregroundColor(.secondary)
             Text(timer.formattedTotalPassedTime)
