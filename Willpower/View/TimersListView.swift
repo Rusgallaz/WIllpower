@@ -12,7 +12,10 @@ struct TimersListView: View {
 
     @FetchRequest(
         entity: WPTimer.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false), NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)]
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
+            NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
+        ]
     )
     var timers: FetchedResults<WPTimer>
 

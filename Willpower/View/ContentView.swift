@@ -14,9 +14,9 @@ struct ContentView: View {
     private var addTimerButton: some View {
         Button(action: {
             isCreatingTimer = true
-        }) {
+        }, label: {
             Image(systemName: "plus").font(.title2)
-        }
+        })
     }
 
     var body: some View {

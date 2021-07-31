@@ -19,7 +19,8 @@ class TimersStorage: NSObject, ObservableObject {
             NSSortDescriptor(keyPath: \WPTimer.isActive, ascending: false),
             NSSortDescriptor(keyPath: \WPTimer.startDate, ascending: true)
         ]
-        controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext,
+                                                sectionNameKeyPath: nil, cacheName: nil)
 
         super.init()
 

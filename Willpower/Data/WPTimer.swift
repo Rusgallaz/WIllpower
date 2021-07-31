@@ -33,7 +33,10 @@ extension WPTimer {
         return secondsPassed > WPTimer.oneDayInSeconds
     }
 
-    private func passedDateComponent(dateComponents: DateComponents, style: DateComponentsFormatter.UnitsStyle) -> String {
+    private func passedDateComponent(
+        dateComponents: DateComponents,
+        style: DateComponentsFormatter.UnitsStyle
+    ) -> String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = style
 
@@ -41,7 +44,11 @@ extension WPTimer {
     }
 
     var passedTime: String {
-        var diffComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: wrappedStarDate, to: Date())
+        var diffComponents = Calendar.current.dateComponents(
+            [.day, .hour, .minute, .second],
+            from: wrappedStarDate,
+            to: Date()
+        )
         diffComponents.day = 0
 
         return passedDateComponent(dateComponents: diffComponents, style: .positional)
