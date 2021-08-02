@@ -15,6 +15,7 @@ struct DetailView: View {
 
     @State private var isShowingEditActions = false
     @State private var isShowingEditView = false
+    @State private var isShowingDeleteTimerAlert = false
 
     @ObservedObject var timer: WPTimer
 
@@ -40,6 +41,10 @@ struct DetailView: View {
         .sheet(isPresented: $isShowingEditView) {
             EditView(timer: timer)
         }
+        .alert(isPresented: $isShowingDeleteTimerAlert) {
+            Alert(title: Text("Delete timer"), message: Text("Are you sure?"),
+                  primaryButton: .destructive(Text("Delete"), action: removeTimer), secondaryButton: .cancel())
+        }
     }
 
     private var settingsButton: some View {
@@ -52,7 +57,7 @@ struct DetailView: View {
     private var editButtons: [ActionSheet.Button] {
         var buttons = [
             ActionSheet.Button.default(Text("Edit"), action: editTimer),
-            ActionSheet.Button.destructive(Text("Remove"), action: removeTimer),
+            ActionSheet.Button.destructive(Text("Remove"), action: showDeleteAlert),
             ActionSheet.Button.cancel()
         ]
         if timer.isActive {
@@ -65,7 +70,11 @@ struct DetailView: View {
     }
 
     private func showEditActions() {
-        self.isShowingEditActions = true
+        isShowingEditActions = true
+    }
+
+    private func showDeleteAlert() {
+        isShowingDeleteTimerAlert = true
     }
 
     private func removeTimer() {
