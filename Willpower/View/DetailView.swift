@@ -51,6 +51,7 @@ struct DetailView: View {
         Button(action: showEditActions) {
             Image(systemName: "gearshape.fill")
                 .foregroundColor(.black)
+                .font(.title2)
         }
     }
 

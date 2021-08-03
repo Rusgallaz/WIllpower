@@ -12,14 +12,11 @@ struct WillpowerApp: App {
 
     @Environment(\.scenePhase) var scenePhase
 
-    @StateObject var timersStorage: TimersStorage
     @StateObject var persistenceController: PersistenceController
 
     init() {
         let persistenceController = PersistenceController()
         _persistenceController = StateObject(wrappedValue: persistenceController)
-        let storage = TimersStorage(managedObjectContext: persistenceController.container.viewContext)
-        _timersStorage = StateObject(wrappedValue: storage)
     }
 
     var body: some Scene {

@@ -32,3 +32,10 @@
 "Delete timer" = "Delete timer";
 "Are you sure?" = "Are you sure?";
 "Delete" = "Delete";
+
+/* menu */
+"Discipline Timers" = "Discipline Timers";
+"Feedback" = "Feedback";
+"Share" = "Share";
+"Rate App" = "Rate App";
+"Version: 1.0.0" = "Version: 1.0.0";

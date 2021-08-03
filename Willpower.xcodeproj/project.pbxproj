@@ -22,16 +22,16 @@
 		C13D78CD2671510500A421AE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D78CC2671510500A421AE /* DetailView.swift */; };
 		C168061A269E20F4006653EA /* DetailAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */; };
 		C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */; };
-		C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF72690A87200BF36F4 /* TimerUtils.swift */; };
 		C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */; };
 		C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */; };
 		C1D43B522673A98F004322B4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B512673A98F004322B4 /* EditView.swift */; };
 		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
 		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
-		C1F56A092694C829003D219B /* TimersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F56A082694C829003D219B /* TimersStorage.swift */; };
 		C1F78D8926B48C1E00CA6F22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */; };
 		C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */; };
 		C1F78D9126B5C7E300CA6F22 /* StoppedTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */; };
+		C1F78DEB26B873A500CA6F22 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78DEA26B873A500CA6F22 /* MenuView.swift */; };
+		C1F78DED26B9AE7900CA6F22 /* MenuItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,17 +73,17 @@
 		C13D78CC2671510500A421AE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdditionalInfoView.swift; sourceTree = "<group>"; };
 		C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
-		C19F0CF72690A87200BF36F4 /* TimerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtils.swift; sourceTree = "<group>"; };
 		C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryView.swift; sourceTree = "<group>"; };
 		C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPassedTimeView.swift; sourceTree = "<group>"; };
 		C1D43B512673A98F004322B4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
 		C1DB779226B0733800F4CBA1 /* Color-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-extensions.swift"; sourceTree = "<group>"; };
-		C1F56A082694C829003D219B /* TimersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersStorage.swift; sourceTree = "<group>"; };
 		C1F78D8A26B48C1E00CA6F22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1F78D8C26B48C2200CA6F22 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersListView.swift; sourceTree = "<group>"; };
 		C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoppedTimerView.swift; sourceTree = "<group>"; };
+		C1F78DEA26B873A500CA6F22 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +181,8 @@
 				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
 				C13D78AD2669692F00A421AE /* TimerView.swift */,
 				C13D787C2668240600A421AE /* ContentView.swift */,
+				C1F78DEA26B873A500CA6F22 /* MenuView.swift */,
+				C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */,
 				C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */,
 				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
 				C1D43B512673A98F004322B4 /* EditView.swift */,
@@ -197,7 +199,6 @@
 			children = (
 				C13D78C2266A92BA00A421AE /* WPTimer.swift */,
 				C1D43B5626793288004322B4 /* WPHistoryDates.swift */,
-				C1F56A082694C829003D219B /* TimersStorage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -206,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				C13D78832668240E00A421AE /* Persistence.swift */,
-				C19F0CF72690A87200BF36F4 /* TimerUtils.swift */,
 				C1DB779226B0733800F4CBA1 /* Color-extensions.swift */,
 			);
 			path = Utils;
@@ -222,7 +222,6 @@
 				C13D78732668240600A421AE /* Sources */,
 				C13D78742668240600A421AE /* Frameworks */,
 				C13D78752668240600A421AE /* Resources */,
-				C1F78D9226B5D38E00CA6F22 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -339,27 +338,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		C1F78D9226B5D38E00CA6F22 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C13D78732668240600A421AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,13 +345,13 @@
 			files = (
 				C13D78AE2669693000A421AE /* TimerView.swift in Sources */,
 				C1F78D9126B5C7E300CA6F22 /* StoppedTimerView.swift in Sources */,
-				C19F0CF82690A87200BF36F4 /* TimerUtils.swift in Sources */,
 				C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */,
 				C13D78CD2671510500A421AE /* DetailView.swift in Sources */,
 				C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */,
 				C13D78842668240E00A421AE /* Persistence.swift in Sources */,
-				C1F56A092694C829003D219B /* TimersStorage.swift in Sources */,
+				C1F78DEB26B873A500CA6F22 /* MenuView.swift in Sources */,
 				C13D787D2668240600A421AE /* ContentView.swift in Sources */,
+				C1F78DED26B9AE7900CA6F22 /* MenuItemsView.swift in Sources */,
 				C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */,
 				C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */,
 				C13B78F426A4E8BF00DFB7A8 /* PassedTimeView.swift in Sources */,

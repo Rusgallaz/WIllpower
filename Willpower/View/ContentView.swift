@@ -9,27 +9,45 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+
+    @State private var isShowingMenu = false
     @State private var isCreatingTimer = false
 
     private var addTimerButton: some View {
         Button(action: {
             isCreatingTimer = true
         }, label: {
-            Image(systemName: "plus").font(.title2)
+            Image(systemName: "plus")
+                .font(.title2)
+        })
+    }
+
+    private var showMenuButton: some View {
+        Button(action: {
+            withAnimation {
+                self.isShowingMenu.toggle()
+            }
+        }, label: {
+            Image(systemName: "line.horizontal.3")
+                .font(.title2)
         })
     }
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.WPBackground.edgesIgnoringSafeArea(.all)
-                TimersListView()
+        ZStack {
+            NavigationView {
+                ZStack {
+                    Color.WPBackground.edgesIgnoringSafeArea(.all)
+                    TimersListView()
+                }
+                .navigationBarTitle("Timers")
+                .navigationBarItems(leading: showMenuButton, trailing: addTimerButton)
+                .sheet(isPresented: $isCreatingTimer) {
+                    AddTimerView()
+                }
             }
-            .navigationBarTitle("Timers")
-            .navigationBarItems(trailing: addTimerButton)
-        }
-        .sheet(isPresented: $isCreatingTimer) {
-            AddTimerView()
+
+            MenuView(isOpen: self.$isShowingMenu)
         }
     }
 }
