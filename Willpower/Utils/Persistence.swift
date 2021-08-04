@@ -7,9 +7,11 @@
 
 import CoreData
 
+/// A singleton for working with Core Data. Saving, deleting, creating test data, preparing preview data.
 class PersistenceController: ObservableObject {
     let container: NSPersistentContainer
 
+    /// Simple data keeping in memory for preview canvas.
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         let viewContext = controller.container.viewContext
@@ -26,6 +28,9 @@ class PersistenceController: ObservableObject {
         return controller
     }()
 
+    
+    /// Initializes a Persistence, either in memory or on permanent storage. Causes fatal error if loadPersistentStores returns error.
+    /// - Parameter inMemory: Whether to store data in temporary memory or not.
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Willpower")
         if inMemory {
@@ -38,10 +43,7 @@ class PersistenceController: ObservableObject {
         }
     }
 
-    func createSimpleData() throws {
-
-    }
-
+    /// Save data if view context has changes. Causes fatal error if save is not successful.
     func save() {
         if container.viewContext.hasChanges {
             do {
@@ -53,10 +55,12 @@ class PersistenceController: ObservableObject {
         }
     }
 
+    /// Delete object from the storage.
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
 
+    /// Delete ALL objects from the storage. Use only for testing purposes.
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = WPHistoryDates.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)

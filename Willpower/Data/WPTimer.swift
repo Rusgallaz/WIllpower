@@ -11,38 +11,38 @@ import CoreData
 extension WPTimer {
 
     private static let oneDayInSeconds: Double = 60*60*24
-
-    var secondsPassed: TimeInterval {
-        abs(wrappedStarDate.timeIntervalSinceNow)
-    }
-
+    
+    /// Name of the timer or "Unknown" (if name is nil)
     var wrappedName: String {
-        name ?? "Unkown"
+        name ?? "Unknown"
     }
 
+    /// Last start date of the timer or current date (if startDate is nil)
     var wrappedStarDate: Date {
         return startDate ?? Date()
     }
-
+    
+    
+    /// Timer histories sorted by start date in descending order.
     var wrappedHistories: [WPHistoryDates] {
         let setDate = historyDates as? Set<WPHistoryDates> ?? Set<WPHistoryDates>()
         return Array(setDate).sorted { $0.wrappedStartDate > $1.wrappedStartDate}
     }
 
+    /// How many seconds have passed since the last start of the timer
+    var secondsPassed: TimeInterval {
+        abs(wrappedStarDate.timeIntervalSinceNow)
+    }
+
+    ///  Return true if the timer was started more than one day ago.
     var passedMoreThanDay: Bool {
         return secondsPassed > WPTimer.oneDayInSeconds
     }
 
-    private func passedDateComponent(
-        dateComponents: DateComponents,
-        style: DateComponentsFormatter.UnitsStyle
-    ) -> String {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = style
-
-        return formatter.string(from: dateComponents) ?? "Unknown"
-    }
-
+    
+    /// Calculates time between start date and now, and returns hours, minutes and seconds. Style - positional.
+    ///
+    /// Example: A timer started 4 months 12 days 2 hours 56 minutes and 38 seconds ago. The function returns 2:56:38.
     var passedTime: String {
         var diffComponents = Calendar.current.dateComponents(
             [.day, .hour, .minute, .second],
@@ -54,6 +54,9 @@ extension WPTimer {
         return passedDateComponent(dateComponents: diffComponents, style: .positional)
     }
 
+    /// Calculates time between start date and now, and  returns value of the first date component. Style - full.
+    ///
+    /// Example: A timer started 4 months 12 days 2 hours 56 minutes and 38 seconds ago. The function returns 4 months.
     var passedPrimaryDate: String {
         let allComponents = Calendar.current.dateComponents([.year, .month, .day], from: wrappedStarDate, to: Date())
         var diffComponents = DateComponents()
@@ -70,6 +73,9 @@ extension WPTimer {
         return passedDateComponent(dateComponents: diffComponents, style: .full)
     }
 
+    /// Calculates time between start date and now, and  returns values of all date components except the first. Style - abbreviated and positional.
+    ///
+    /// Example: A timer started 4 months 12 days 2 hours 56 minutes and 38 seconds ago. The function returns 12d 2:56:38.
     var passedSecondaryDate: String {
         var diffComponents = Calendar.current.dateComponents([.year, .month, .day], from: wrappedStarDate, to: Date())
         if let years = diffComponents.year, years > 0 {
@@ -84,14 +90,7 @@ extension WPTimer {
         return "\(passed) \(passedTime)"
     }
 
-    var totalPassedSeconds: TimeInterval {
-        var timePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
-        if isActive {
-            timePassed += secondsPassed
-        }
-        return timePassed
-    }
-
+    /// Total passed time for the timer including history. Shows only the first 3 units.
     var formattedTotalPassedTime: String {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
@@ -101,12 +100,39 @@ extension WPTimer {
         return formatter.string(from: totalPassedSeconds) ?? "Unknown"
     }
 
+    /// The date  the timer  started. Format - "dd.MM.yyyy, HH:mm".
     var formattedStartDate: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy, HH:mm"
         return formatter.string(from: wrappedStarDate)
     }
+    
+    /// The sum of all time intervals between end - start dates of each history of the timer, plus passed seconds since last start date if the timer is active.
+    private var totalPassedSeconds: TimeInterval {
+        var timePassed = wrappedHistories.map { $0.wrappedEndDate.timeIntervalSince($0.wrappedStartDate) }.reduce(0, +)
+        if isActive {
+            timePassed += secondsPassed
+        }
+        return timePassed
+    }
+    
+    
+    /// Returns a formatted string based on the specified date component and unit style.
+    /// - Returns: A formatted string representing the specified date information or "Unknown".
+    private func passedDateComponent(
+        dateComponents: DateComponents,
+        style: DateComponentsFormatter.UnitsStyle
+    ) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = style
 
+        return formatter.string(from: dateComponents) ?? "Unknown"
+    }
+}
+
+
+// For preview and testing purposes.
+extension WPTimer {
     static func example(context: NSManagedObjectContext) -> WPTimer {
         let timer = WPTimer(context: context)
         timer.name = "Example"
