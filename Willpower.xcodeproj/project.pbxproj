@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11DF43F26BACC0B001701D1 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF43E26BACC0B001701D1 /* MailView.swift */; };
+		C11DF44126BACDE1001701D1 /* ComposeMailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF44026BACDE1001701D1 /* ComposeMailData.swift */; };
+		C11DF44326BACFB5001701D1 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */; };
 		C13B78F426A4E8BF00DFB7A8 /* PassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */; };
 		C13D787B2668240600A421AE /* WillpowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787A2668240600A421AE /* WillpowerApp.swift */; };
 		C13D787D2668240600A421AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13D787C2668240600A421AE /* ContentView.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C11DF43E26BACC0B001701D1 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		C11DF44026BACDE1001701D1 /* ComposeMailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMailData.swift; sourceTree = "<group>"; };
+		C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackButton.swift; sourceTree = "<group>"; };
 		C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassedTimeView.swift; sourceTree = "<group>"; };
 		C13D78772668240600A421AE /* Willpower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willpower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13D787A2668240600A421AE /* WillpowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerApp.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 				C13D787C2668240600A421AE /* ContentView.swift */,
 				C1F78DEA26B873A500CA6F22 /* MenuView.swift */,
 				C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */,
+				C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */,
 				C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */,
 				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
 				C1D43B512673A98F004322B4 /* EditView.swift */,
@@ -190,6 +197,7 @@
 				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
 				C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */,
 				C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */,
+				C11DF43E26BACC0B001701D1 /* MailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			children = (
 				C13D78C2266A92BA00A421AE /* WPTimer.swift */,
 				C1D43B5626793288004322B4 /* WPHistoryDates.swift */,
+				C11DF44026BACDE1001701D1 /* ComposeMailData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 			files = (
 				C13D78AE2669693000A421AE /* TimerView.swift in Sources */,
 				C1F78D9126B5C7E300CA6F22 /* StoppedTimerView.swift in Sources */,
+				C11DF44326BACFB5001701D1 /* SendFeedbackButton.swift in Sources */,
 				C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */,
 				C13D78CD2671510500A421AE /* DetailView.swift in Sources */,
 				C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */,
@@ -362,7 +372,9 @@
 				C13D78C3266A92BA00A421AE /* WPTimer.swift in Sources */,
 				C13D78872668240E00A421AE /* Willpower.xcdatamodeld in Sources */,
 				C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */,
+				C11DF43F26BACC0B001701D1 /* MailView.swift in Sources */,
 				C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */,
+				C11DF44126BACDE1001701D1 /* ComposeMailData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ struct MenuView: View {
     
     @State private var offset = CGSize.zero
     
-    private let width = UIScreen.main.bounds.width * 0.7
+    private let width = UIScreen.main.bounds.width * 0.8
     
     var body: some View {
         let swipeMenuGesture = DragGesture()

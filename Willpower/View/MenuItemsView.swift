@@ -14,23 +14,20 @@ struct MenuItemsView: View {
                 .font(.title2)
             Divider()
 
-            HStack {
-                Image(systemName: "envelope.fill")
-                Button("Feedback") { }.buttonStyle(PlainButtonStyle())
-            }
-            .padding(.top)
-            HStack {
-                Image(systemName: "arrowshape.turn.up.backward.fill")
-                Button("Share") { }.buttonStyle(PlainButtonStyle())
-            }
-            HStack {
-                Image(systemName: "star.fill")
-                Button("Rate App") { }.buttonStyle(PlainButtonStyle())
-            }
+            SendFeedbackButton()
+                .padding(.top)
+//            HStack {
+//                Image(systemName: "arrowshape.turn.up.backward.fill")
+//                Button("Share") { }.buttonStyle(PlainButtonStyle())
+//            }
+//            HStack {
+//                Image(systemName: "star.fill")
+//                Button("Rate App") { }.buttonStyle(PlainButtonStyle())
+//            }
             Spacer()
 
             Divider()
-            Text("Version: 1.0.0")
+            Text("Version: 1.0")
                 .foregroundColor(.secondary)
                 .font(.caption)
         }

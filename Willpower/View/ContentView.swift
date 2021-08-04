@@ -18,7 +18,7 @@ struct ContentView: View {
             isCreatingTimer = true
         }, label: {
             Image(systemName: "plus")
-                .font(.title2)
+                .font(.title)
         })
     }
 
@@ -29,7 +29,7 @@ struct ContentView: View {
             }
         }, label: {
             Image(systemName: "line.horizontal.3")
-                .font(.title2)
+                .font(.title)
         })
     }
 
