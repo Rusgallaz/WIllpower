@@ -117,6 +117,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C11DF44426BB376B001701D1 /* Left Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C11DF44626BB37E7001701D1 /* Feedback */,
+				C1F78DEA26B873A500CA6F22 /* MenuView.swift */,
+				C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */,
+			);
+			path = "Left Menu";
+			sourceTree = "<group>";
+		};
+		C11DF44526BB3799001701D1 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78AD2669692F00A421AE /* TimerView.swift */,
+				C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */,
+				C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C11DF44626BB37E7001701D1 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				C11DF43E26BACC0B001701D1 /* MailView.swift */,
+				C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		C11DF44726BB3801001701D1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C11DF44826BB382F001701D1 /* History */,
+				C13D78CC2671510500A421AE /* DetailView.swift */,
+				C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */,
+				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
+				C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C11DF44826BB382F001701D1 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
+				C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		C11DF44926BB385C001701D1 /* Add Edit */ = {
+			isa = PBXGroup;
+			children = (
+				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
+				C1D43B512673A98F004322B4 /* EditView.swift */,
+			);
+			path = "Add Edit";
+			sourceTree = "<group>";
+		};
 		C13D786E2668240500A421AE = {
 			isa = PBXGroup;
 			children = (
@@ -182,22 +241,11 @@
 		C19F0CF42690A35400BF36F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C13D78CC2671510500A421AE /* DetailView.swift */,
-				C13B78F326A4E8BF00DFB7A8 /* PassedTimeView.swift */,
-				C13D78C7266D7E1F00A421AE /* AddTimerView.swift */,
-				C13D78AD2669692F00A421AE /* TimerView.swift */,
+				C11DF44926BB385C001701D1 /* Add Edit */,
+				C11DF44726BB3801001701D1 /* Detail */,
+				C11DF44526BB3799001701D1 /* Timer */,
+				C11DF44426BB376B001701D1 /* Left Menu */,
 				C13D787C2668240600A421AE /* ContentView.swift */,
-				C1F78DEA26B873A500CA6F22 /* MenuView.swift */,
-				C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */,
-				C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */,
-				C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */,
-				C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */,
-				C1D43B512673A98F004322B4 /* EditView.swift */,
-				C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */,
-				C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */,
-				C1F78D9026B5C7E300CA6F22 /* StoppedTimerView.swift */,
-				C1680619269E20F4006653EA /* DetailAdditionalInfoView.swift */,
-				C11DF43E26BACC0B001701D1 /* MailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
