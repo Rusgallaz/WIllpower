@@ -16,4 +16,7 @@ extension Color {
     
     /// Main background color
     static let WPBackground = Color(red: 233/255, green: 234/255, blue: 243/255)
+    
+    /// Color for buttons
+    static let WPActionColor = Color(red: 57/255, green: 115/255, blue: 155/255)
 }

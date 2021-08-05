@@ -50,7 +50,7 @@ struct DetailView: View {
     private var settingsButton: some View {
         Button(action: showEditActions) {
             Image(systemName: "gearshape.fill")
-                .foregroundColor(.black)
+                .foregroundColor(.WPActionColor)
                 .font(.title2)
         }
     }

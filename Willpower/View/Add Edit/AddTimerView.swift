@@ -49,6 +49,7 @@ struct AddTimerView: View {
             .navigationBarTitle(Text("New timer"), displayMode: .inline)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }
+        .accentColor(Color.WPActionColor)
     }
 
     private func save() {

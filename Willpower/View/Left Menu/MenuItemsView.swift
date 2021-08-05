@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuItemsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Discipline Timers")
+            Text("Motivation Timers")
                 .font(.title2)
             Divider()
 

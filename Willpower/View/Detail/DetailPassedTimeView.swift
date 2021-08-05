@@ -23,6 +23,7 @@ struct DetailPassedTimeView: View {
                 }
                 Spacer()
                 Image(systemName: isShowingAdditional ? "chevron.down" : "chevron.right")
+                    .foregroundColor(.WPActionColor)
             }
             .padding(.horizontal)
             .contentShape(Rectangle())

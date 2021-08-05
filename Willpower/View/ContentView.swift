@@ -40,12 +40,13 @@ struct ContentView: View {
                     Color.WPBackground.edgesIgnoringSafeArea(.all)
                     TimersListView()
                 }
-                .navigationBarTitle("Timers")
+                .navigationBarTitle("Timers", displayMode: .inline)
                 .navigationBarItems(leading: showMenuButton, trailing: addTimerButton)
                 .sheet(isPresented: $isCreatingTimer) {
                     AddTimerView()
                 }
             }
+            .accentColor(Color.WPActionColor)
 
             MenuView(isOpen: self.$isShowingMenu)
         }

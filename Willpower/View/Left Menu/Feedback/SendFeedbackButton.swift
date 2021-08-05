@@ -20,6 +20,7 @@ struct SendFeedbackButton: View {
             }
             .disabled(!MailView.canSendMail)
             .buttonStyle(PlainButtonStyle())
+            .foregroundColor(.WPActionColor)
         }
         .sheet(isPresented: $isShowingMailView) {
             MailView(data: $mailData)

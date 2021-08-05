@@ -48,6 +48,7 @@ struct EditView: View {
             .navigationBarTitle(Text("Edit timer"), displayMode: .inline)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }
+        .accentColor(Color.WPActionColor)
     }
 
     private func save() {
