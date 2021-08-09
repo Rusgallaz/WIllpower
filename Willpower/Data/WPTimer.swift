@@ -149,13 +149,13 @@ extension WPTimer {
 
         let dates2 = WPHistoryDates(context: context)
         let startDateComp2 = DateComponents(day: -25, hour: -13)
-        let endDateComp2 = DateComponents( day: -15, hour: -1)
+        let endDateComp2 = DateComponents(day: -15, hour: -1)
         dates2.startDate = Calendar.current.date(byAdding: startDateComp2, to: Date())
         dates2.endDate = Calendar.current.date(byAdding: endDateComp2, to: Date())
 
         let dates3 = WPHistoryDates(context: context)
         let startDateComp3 = DateComponents(day: -5, hour: -9)
-        let endDateComp3 = DateComponents( day: -1, hour: -20)
+        let endDateComp3 = DateComponents(day: -1, hour: -20)
         dates3.startDate = Calendar.current.date(byAdding: startDateComp3, to: Date())
         dates3.endDate = Calendar.current.date(byAdding: endDateComp3, to: Date())
 

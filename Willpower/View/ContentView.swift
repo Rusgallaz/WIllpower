@@ -10,6 +10,8 @@ import CoreData
 
 struct ContentView: View {
 
+    @EnvironmentObject var controller: PersistenceController
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var isShowingMenu = false
     @State private var isCreatingTimer = false
 

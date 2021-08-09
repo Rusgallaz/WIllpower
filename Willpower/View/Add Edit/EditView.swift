@@ -43,7 +43,7 @@ struct EditView: View {
             Form {
                 TextField("Timer name", text: $timerName)
                 DatePicker("Start date", selection: $startDate, in: ...Date())
-                    .datePickerStyle(.graphical)
+                    .datePickerStyle(GraphicalDatePickerStyle())
             }
             .navigationBarTitle(Text("Edit timer"), displayMode: .inline)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)

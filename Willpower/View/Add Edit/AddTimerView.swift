@@ -43,7 +43,7 @@ struct AddTimerView: View {
                     DatePicker(selection: $startDate, in: ...Date()) {
                         Text("Start date")
                     }
-                    .datePickerStyle(.graphical)
+                    .datePickerStyle(GraphicalDatePickerStyle())
                 }
             }
             .navigationBarTitle(Text("New timer"), displayMode: .inline)
