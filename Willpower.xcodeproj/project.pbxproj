@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10322CE26C17EE3001AD038 /* RateAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10322CD26C17EE3001AD038 /* RateAppButton.swift */; };
+		C10322D126C18B28001AD038 /* ShareAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10322D026C18B28001AD038 /* ShareAppButton.swift */; };
 		C11DF43F26BACC0B001701D1 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF43E26BACC0B001701D1 /* MailView.swift */; };
 		C11DF44126BACDE1001701D1 /* ComposeMailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF44026BACDE1001701D1 /* ComposeMailData.swift */; };
 		C11DF44326BACFB5001701D1 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C10322CD26C17EE3001AD038 /* RateAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAppButton.swift; sourceTree = "<group>"; };
+		C10322D026C18B28001AD038 /* ShareAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppButton.swift; sourceTree = "<group>"; };
 		C11DF43E26BACC0B001701D1 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C11DF44026BACDE1001701D1 /* ComposeMailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMailData.swift; sourceTree = "<group>"; };
 		C11DF44226BACFB5001701D1 /* SendFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackButton.swift; sourceTree = "<group>"; };
@@ -117,9 +121,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C10322CC26C17EC1001AD038 /* Rate app */ = {
+			isa = PBXGroup;
+			children = (
+				C10322CD26C17EE3001AD038 /* RateAppButton.swift */,
+			);
+			path = "Rate app";
+			sourceTree = "<group>";
+		};
+		C10322CF26C18A8A001AD038 /* Share app */ = {
+			isa = PBXGroup;
+			children = (
+				C10322D026C18B28001AD038 /* ShareAppButton.swift */,
+			);
+			path = "Share app";
+			sourceTree = "<group>";
+		};
 		C11DF44426BB376B001701D1 /* Left Menu */ = {
 			isa = PBXGroup;
 			children = (
+				C10322CF26C18A8A001AD038 /* Share app */,
+				C10322CC26C17EC1001AD038 /* Rate app */,
 				C11DF44626BB37E7001701D1 /* Feedback */,
 				C1F78DEA26B873A500CA6F22 /* MenuView.swift */,
 				C1F78DEC26B9AE7900CA6F22 /* MenuItemsView.swift */,
@@ -423,6 +445,8 @@
 				C11DF43F26BACC0B001701D1 /* MailView.swift in Sources */,
 				C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */,
 				C11DF44126BACDE1001701D1 /* ComposeMailData.swift in Sources */,
+				C10322CE26C17EE3001AD038 /* RateAppButton.swift in Sources */,
+				C10322D126C18B28001AD038 /* ShareAppButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

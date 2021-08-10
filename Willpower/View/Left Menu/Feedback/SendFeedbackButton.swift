@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SendFeedbackButton: View {
     
-    @State private var mailData = ComposeMailData(subject: "Discipline Timers", recipients: ["gallarusaz@gmail.com"])
+    @State private var mailData = ComposeMailData(subject: "Motivation Timers", recipients: ["gallarusaz@gmail.com"])
     @State private var isShowingMailView = false
     
     var body: some View {

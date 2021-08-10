@@ -16,14 +16,9 @@ struct MenuItemsView: View {
 
             SendFeedbackButton()
                 .padding(.top)
-//            HStack {
-//                Image(systemName: "arrowshape.turn.up.backward.fill")
-//                Button("Share") { }.buttonStyle(PlainButtonStyle())
-//            }
-//            HStack {
-//                Image(systemName: "star.fill")
-//                Button("Rate App") { }.buttonStyle(PlainButtonStyle())
-//            }
+            RateAppButton()
+            ShareAppButton()
+            
             Spacer()
 
             Divider()
