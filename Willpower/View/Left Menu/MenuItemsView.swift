@@ -22,7 +22,7 @@ struct MenuItemsView: View {
             Spacer()
 
             Divider()
-            Text("Version: 1.0")
+            Text("Version: 1.1")
                 .foregroundColor(.secondary)
                 .font(.caption)
         }

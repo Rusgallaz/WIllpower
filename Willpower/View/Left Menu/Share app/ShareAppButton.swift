@@ -11,13 +11,13 @@ struct ShareAppButton: View {
     var body: some View {
         HStack {
             Image(systemName: "arrowshape.turn.up.backward.fill")
-            Button("Share", action: actionSheet)
+            Button("Share", action: showShareSheet)
                 .buttonStyle(PlainButtonStyle())
                 .foregroundColor(.WPActionColor)
         }
     }
     
-    func actionSheet() {
+    func showShareSheet() {
            guard let urlShare = URL(string: "https://itunes.apple.com/app/id1580215704") else { return }
            let activityVC = UIActivityViewController(activityItems: [urlShare], applicationActivities: nil)
            UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
