@@ -92,12 +92,14 @@ extension WPTimer {
 
     /// Total passed time for the timer including history. Shows only the first 3 units.
     var formattedTotalPassedTime: String {
+        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date(timeIntervalSinceNow: -totalPassedSeconds), to: Date())
+        
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full
         formatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
         formatter.maximumUnitCount = 3
 
-        return formatter.string(from: totalPassedSeconds) ?? "Unknown"
+        return formatter.string(from: components) ?? "Unknown"
     }
 
     /// The date  the timer  started. Format - "dd.MM.yyyy, HH:mm".
