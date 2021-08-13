@@ -60,6 +60,15 @@ class PersistenceController: ObservableObject {
         container.viewContext.delete(object)
     }
     
+    
+    /// Returns the number of objects from the storage
+    /// - Parameter request: entity type
+    /// - Returns: number of objects or zero
+    func count(for request: NSFetchRequest<NSFetchRequestResult>) -> Int {
+        let count =  try? container.viewContext.count(for: request)
+        return count ?? 0
+    }
+    
     /// Delete ALL objects from the storage. Use only for testing purposes.
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = WPHistoryDates.fetchRequest()

@@ -29,6 +29,7 @@
 		C19F0CF32690A33E00BF36F4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */; };
 		C19F0CFA2690B5AC00BF36F4 /* ListHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */; };
 		C19F0CFC2690C31E00BF36F4 /* DetailPassedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */; };
+		C1C875FE26C71B80002A2929 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C875FD26C71B80002A2929 /* TimerTests.swift */; };
 		C1D43B522673A98F004322B4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B512673A98F004322B4 /* EditView.swift */; };
 		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
 		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
@@ -85,6 +86,7 @@
 		C19F0CF22690A33E00BF36F4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		C19F0CF92690B5AC00BF36F4 /* ListHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHistoryView.swift; sourceTree = "<group>"; };
 		C19F0CFB2690C31E00BF36F4 /* DetailPassedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPassedTimeView.swift; sourceTree = "<group>"; };
+		C1C875FD26C71B80002A2929 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		C1D43B512673A98F004322B4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
 		C1DB779226B0733800F4CBA1 /* Color-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-extensions.swift"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				C13D78912668240F00A421AE /* WillpowerTests.swift */,
+				C1C875FD26C71B80002A2929 /* TimerTests.swift */,
 				C13D78932668240F00A421AE /* Info.plist */,
 			);
 			path = WillpowerTests;
@@ -455,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13D78922668240F00A421AE /* WillpowerTests.swift in Sources */,
+				C1C875FE26C71B80002A2929 /* TimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
