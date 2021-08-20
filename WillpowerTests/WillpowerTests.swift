@@ -18,5 +18,4 @@ class BaseTestCase: XCTestCase {
         persistenceController = PersistenceController(inMemory: true)
         managedObjectContext = persistenceController.container.viewContext
     }
-
 }

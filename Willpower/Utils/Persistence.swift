@@ -84,7 +84,7 @@ class PersistenceController: ObservableObject {
         let context = container.viewContext
         
         let timer = WPTimer(context: context)
-        timer.name = "Without cofffee"
+        timer.name = "Some Timer"
         let startDateComp = DateComponents(day: -14, hour: -15, minute: -14)
         timer.startDate = Calendar.current.date(byAdding: startDateComp, to: Date())
         timer.isActive = true
