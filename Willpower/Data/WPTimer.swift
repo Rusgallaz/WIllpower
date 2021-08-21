@@ -22,7 +22,6 @@ extension WPTimer {
         return startDate ?? Date()
     }
     
-    
     /// Timer histories sorted by start date in descending order.
     var wrappedHistories: [WPHistoryDates] {
         let setDate = historyDates as? Set<WPHistoryDates> ?? Set<WPHistoryDates>()
@@ -38,7 +37,6 @@ extension WPTimer {
     var passedMoreThanDay: Bool {
         return secondsPassed > WPTimer.oneDayInSeconds
     }
-
     
     /// Calculates time between start date and now, and returns hours, minutes and seconds. Style - positional.
     ///
