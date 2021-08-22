@@ -8,5 +8,11 @@
 import XCTest
 
 class WillpowerUITests: XCTestCase {
-
+    var app: XCUIApplication!
+    
+    override func setUpWithError() throws {
+        app = XCUIApplication()
+        app.launchArguments = ["enable-testing"]
+        app.launch()
+    }
 }

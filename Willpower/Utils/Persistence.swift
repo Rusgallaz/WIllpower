@@ -10,24 +10,6 @@ import CoreData
 /// A singleton for working with Core Data. Saving, deleting, creating test data, preparing preview data.
 class PersistenceController: ObservableObject {
     let container: NSPersistentContainer
-
-    /// Simple data keeping in memory for preview canvas.
-    static var preview: PersistenceController = {
-        let controller = PersistenceController(inMemory: true)
-        let viewContext = controller.container.viewContext
-        for index in 0..<3 {
-            let newTimer = WPTimer(context: viewContext)
-            let newDates = WPHistoryDates(context: viewContext)
-            newDates.startDate = Date().addingTimeInterval(Double(index * -3000))
-            newDates.endDate = Date().addingTimeInterval(Double(index * -500))
-            newTimer.historyDates = NSSet(object: newDates)
-            newTimer.name = "Timer example \(index)"
-            newTimer.startDate = Date().addingTimeInterval(Double(index * -5000))
-            newTimer.isActive = index % 2 == 0
-        }
-        return controller
-    }()
-
     
     /// Initializes a Persistence, either in memory or on permanent storage. Causes fatal error if loadPersistentStores returns error.
     /// - Parameter inMemory: Whether to store data in temporary memory or not.
@@ -40,6 +22,12 @@ class PersistenceController: ObservableObject {
             if let error = error {
                 fatalError("Unresolved error \(error), \(error.localizedDescription)")
             }
+            
+            #if DEBUG
+            if CommandLine.arguments.contains("enable-testing") {
+                self.deleteAll()
+            }
+            #endif
         }
     }
 
@@ -60,7 +48,6 @@ class PersistenceController: ObservableObject {
         container.viewContext.delete(object)
     }
     
-    
     /// Returns the number of objects from the storage
     /// - Parameter request: entity type
     /// - Returns: number of objects or zero
@@ -68,6 +55,27 @@ class PersistenceController: ObservableObject {
         let count =  try? container.viewContext.count(for: request)
         return count ?? 0
     }
+}
+
+
+// For testing and preview
+extension PersistenceController {
+    /// Simple data keeping in memory for preview canvas.
+    static var preview: PersistenceController = {
+        let controller = PersistenceController(inMemory: true)
+        let viewContext = controller.container.viewContext
+        for index in 0..<3 {
+            let newTimer = WPTimer(context: viewContext)
+            let newDates = WPHistoryDates(context: viewContext)
+            newDates.startDate = Date().addingTimeInterval(Double(index * -3000))
+            newDates.endDate = Date().addingTimeInterval(Double(index * -500))
+            newTimer.historyDates = NSSet(object: newDates)
+            newTimer.name = "Timer example \(index)"
+            newTimer.startDate = Date().addingTimeInterval(Double(index * -5000))
+            newTimer.isActive = index % 2 == 0
+        }
+        return controller
+    }()
     
     /// Delete ALL objects from the storage. Use only for testing purposes.
     func deleteAll() {

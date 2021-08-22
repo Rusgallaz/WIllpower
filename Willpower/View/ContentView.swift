@@ -22,6 +22,7 @@ struct ContentView: View {
             Image(systemName: "plus")
                 .font(.title)
         })
+        .accessibilityIdentifier("addTimerButton")
     }
 
     private var showMenuButton: some View {

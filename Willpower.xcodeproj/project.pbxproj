@@ -33,6 +33,7 @@
 		C1D43B522673A98F004322B4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B512673A98F004322B4 /* EditView.swift */; };
 		C1D43B5726793288004322B4 /* WPHistoryDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D43B5626793288004322B4 /* WPHistoryDates.swift */; };
 		C1D6A00E26D058C90002A4FE /* WPTimerExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6A00D26D058C90002A4FE /* WPTimerExtensionTest.swift */; };
+		C1D6A01026D2D5920002A4FE /* WPHistoryDatesExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6A00F26D2D5920002A4FE /* WPHistoryDatesExtensionTests.swift */; };
 		C1DB779326B0733800F4CBA1 /* Color-extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DB779226B0733800F4CBA1 /* Color-extensions.swift */; };
 		C1F78D8926B48C1E00CA6F22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1F78D8B26B48C1E00CA6F22 /* Localizable.strings */; };
 		C1F78D8F26B5A3AD00CA6F22 /* TimersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F78D8E26B5A3AD00CA6F22 /* TimersListView.swift */; };
@@ -91,6 +92,7 @@
 		C1D43B512673A98F004322B4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		C1D43B5626793288004322B4 /* WPHistoryDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDates.swift; sourceTree = "<group>"; };
 		C1D6A00D26D058C90002A4FE /* WPTimerExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTimerExtensionTest.swift; sourceTree = "<group>"; };
+		C1D6A00F26D2D5920002A4FE /* WPHistoryDatesExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPHistoryDatesExtensionTests.swift; sourceTree = "<group>"; };
 		C1DB779226B0733800F4CBA1 /* Color-extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-extensions.swift"; sourceTree = "<group>"; };
 		C1F78D8A26B48C1E00CA6F22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1F78D8C26B48C2200CA6F22 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				C13D78912668240F00A421AE /* WillpowerTests.swift */,
 				C1C875FD26C71B80002A2929 /* CoreDataTests.swift */,
 				C1D6A00D26D058C90002A4FE /* WPTimerExtensionTest.swift */,
+				C1D6A00F26D2D5920002A4FE /* WPHistoryDatesExtensionTests.swift */,
 				C13D78932668240F00A421AE /* Info.plist */,
 			);
 			path = WillpowerTests;
@@ -461,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13D78922668240F00A421AE /* WillpowerTests.swift in Sources */,
+				C1D6A01026D2D5920002A4FE /* WPHistoryDatesExtensionTests.swift in Sources */,
 				C1D6A00E26D058C90002A4FE /* WPTimerExtensionTest.swift in Sources */,
 				C1C875FE26C71B80002A2929 /* CoreDataTests.swift in Sources */,
 			);

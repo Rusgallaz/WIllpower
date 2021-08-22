@@ -153,12 +153,11 @@ class WPTimerExtensionTest: BaseTestCase {
     }
     
     func testTimerCheckFormattedStartDate() {
-        let startDate = Date()
+        let startDateComp = DateComponents(year: 2021, month: 7, day: 21, hour: 23, minute: 3, second: 10)
+        let startDate = Calendar.current.date(from: startDateComp)!
         let timer = createTimer(startDate: startDate)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy, HH:mm"
-        XCTAssertEqual(timer.formattedStartDate, formatter.string(from: startDate))
+
+        XCTAssertEqual(timer.formattedStartDate, "21.07.2021, 23:03")
     }
     
     func testTimerCheckFormattedTotalPassedTimeWithoutHistoryWithOneUnit() {
@@ -197,6 +196,21 @@ class WPTimerExtensionTest: BaseTestCase {
         createHistory(for: timer, startDate: startDateHistory, endDate: endDateHistory)
         
         XCTAssertEqual(timer.formattedTotalPassedTime, "1 month, 2 days, 2 hours")
+    }
+    
+    func testTimerCheckFormattedTotalPassedTimeWithHistoryForStoppedTimer() {
+        let startDateComp = DateComponents(month: -1, day: -10, hour: -1)
+        let startDateHistoryComp = DateComponents(month: -2, day: -20, hour: -2)
+        let endDateHistoryComp = DateComponents(month: -1, day: -18, hour: -1)
+        
+        let startDate = Calendar.current.date(byAdding: startDateComp, to: Date())!
+        let startDateHistory = Calendar.current.date(byAdding: startDateHistoryComp, to: Date())!
+        let endDateHistory = Calendar.current.date(byAdding: endDateHistoryComp, to: Date())!
+
+        let timer = createTimer(startDate: startDate, isActive: false)
+        createHistory(for: timer, startDate: startDateHistory, endDate: endDateHistory)
+        
+        XCTAssertEqual(timer.formattedTotalPassedTime, "1 month, 1 day, 1 hour")
     }
     
     func testTimerCheckHistoryOrders() {
